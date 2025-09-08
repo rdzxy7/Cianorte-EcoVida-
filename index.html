@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cianorte EcoVida</title>
-    <link rel="stylesheet" href="style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cianorte EcoVida</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+      /* Rolagem suave */
+      html {
+        scroll-behavior: smooth;
+      }
+   </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
-            </div>
-            <div class="menu">
-                <nav>
-                    <a href="#">Início</a>
-                    <a href="#">O que é</a>
-                    <a href="#">Por que</a>
-                    <a href="#">Como funciona</a>
-                    <a href="#">Pontos de coleta</a>
-                    <a href="#">Vídeos</a>
-                    <a href="#">Contato</a>
-                </nav>
-            </div>
-            <div class="login">
-                <button id="btnLogin" onclick="abrirLogin()">
-                    <img src="img/boneco login.png" alt="Login" width="24" height="24">
-                    <span id="loginText">Login</span>
-                </button>
-            </div>
-        </div>
-    </header>
+   <!-- CABEÇALHO -->
+   <header>
+       <div class="container">
+           <div class="logo">
+               <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
+           </div>
+           <div class="menu">
+               <nav>
+                   <a href="#inicio">Início</a>
+                   <a href="oque.html" target="_blank">O que é</a>
+                   <a href="#porque">Por que</a>
+                   <a href="#comofunciona">Como funciona</a>
+                   <a href="#pontos">Pontos de coleta</a>
+                   <a href="#videos">Vídeos</a>
+                   <a href="#contato">Contato</a>
+               </nav>
+           </div>
+           <div class="login">
+               <button id="btnLogin" onclick="abrirLogin()">
+                   <img src="img/boneco login.png" alt="Login" width="24" height="24">
+                   <span id="loginText">Login</span>
+               </button>
+           </div>
+       </div>
+   </header>
 
-    <!-- Texto rolante -->
-    <div class="rolante-container">
-        <div class="rolante">
-            <p>Recicle seus eletrônicos! | Reduza o lixo eletrônico! | Proteja o meio ambiente! | Doe seus aparelhos!</p>
-        </div>
-    </div>
+   <!-- Texto rolante -->
+   <div class="rolante-container">
+       <div class="rolante">
+           <p>Recicle seus eletrônicos! | Reduza o lixo eletrônico! | Proteja o meio ambiente! | Doe seus aparelhos!</p>
+       </div>
+   </div>
 
-    <!-- Seção principal (HERO BANNER) -->
-    <main>
-        <section id="inicio" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-icon">
-                    <img src="img/reciclagem.png" alt="Reciclagem" width="60">
-                </div>
-                <h1>
-                    Transforme <span class="green">Lixo Eletrônico</span>
-                    em um <span class="blue">Futuro Sustentável</span>
-                </h1>
-                <p>
-                    Descubra como reciclar seus dispositivos eletrônicos de forma responsável
-                    e contribuir para um planeta mais limpo e tecnológico.
-                </p>
-                <a href="#coleta" class="hero-btn">Saiba Mais →</a>
-            </div>
-        </section>
+   <!-- Seção principal (HERO BANNER) -->
+   <main>
+       <section id="inicio" class="hero-section">
+           <div class="hero-content">
+               <div class="hero-icon">
+                   <img src="img/reciclagem.png" alt="Reciclagem" width="60">
+               </div>
+               <h1>
+                   Transforme <span class="green">Lixo Eletrônico</span>
+                   em um <span class="blue">Futuro Sustentável</span>
+               </h1>
+               <p>
+                   Descubra como reciclar seus dispositivos eletrônicos de forma responsável
+                   e contribuir para um planeta mais limpo e tecnológico.
+               </p>
+               <a href="oque.html" class="hero-btn" target="_blank">Saiba Mais →</a>
+           </div>
+       </section>
 
-        <div id="welcomeMessage" class="welcome"></div>
-        <div id="logoutContainer" style="text-align:center; margin-top:20px;">
-            <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
-        </div>
-    </main>
+       <div id="welcomeMessage" class="welcome"></div>
+       <div id="logoutContainer" style="text-align:center; margin-top:20px;">
+           <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
+       </div>
+   </main>
 
-    <!-- Modal Login -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="fechar" onclick="fecharLogin()">&times;</span>
-            <h2>Login</h2>
-            <form id="formLogin">
-                <label for="usuario">E-mail</label>
-                <input type="email" id="usuario" placeholder="Digite seu e-mail" required>
+   <!-- Modal Login -->
+   <div id="loginModal" class="modal">
+       <div class="modal-content">
+           <span class="fechar" onclick="fecharLogin()">&times;</span>
+           <h2>Login</h2>
+           <form id="formLogin">
+               <label for="usuario">E-mail</label>
+               <input type="email" id="usuario" placeholder="Digite seu e-mail" required>
 
-                <label for="senha">Senha</label>
-                <div class="senha-container">
-                    <input type="password" id="senha" placeholder="Digite sua senha" required>
-                    <span class="toggleSenha" onclick="toggleSenha('senha')">&#128065;</span>
-                </div>
+               <label for="senha">Senha</label>
+               <div class="senha-container">
+                   <input type="password" id="senha" placeholder="Digite sua senha" required>
+                   <span class="toggleSenha" onclick="toggleSenha('senha')">&#128065;</span>
+               </div>
 
-                <button type="submit" class="btnLogin">Entrar</button>
-            </form>
-            <p>Não tem uma conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
-        </div>
-    </div>
+               <button type="submit" class="btnLogin">Entrar</button>
+           </form>
+           <p>Não tem uma conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
+       </div>
+   </div>
 
-    <!-- Modal Cadastro -->
-    <div id="cadastroModal" class="modal">
-        <div class="modal-content">
-            <span class="fechar" onclick="fecharCadastro()">&times;</span>
-            <h2>Cadastro</h2>
-            <form id="formCadastro">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
+   <!-- Modal Cadastro -->
+   <div id="cadastroModal" class="modal">
+       <div class="modal-content">
+           <span class="fechar" onclick="fecharCadastro()">&times;</span>
+           <h2>Cadastro</h2>
+           <form id="formCadastro">
+               <label for="nome">Nome</label>
+               <input type="text" id="nome" placeholder="Digite seu nome" required>
 
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+               <label for="email">E-mail</label>
+               <input type="email" id="email" placeholder="Digite seu e-mail" required>
 
-                <label for="senhaCadastro">Senha</label>
-                <div class="senha-container">
-                    <input type="password" id="senhaCadastro" placeholder="Digite sua senha" required>
-                    <span class="toggleSenha" onclick="toggleSenha('senhaCadastro')">&#128065;</span>
-                </div>
+               <label for="senhaCadastro">Senha</label>
+               <div class="senha-container">
+                   <input type="password" id="senhaCadastro" placeholder="Digite sua senha" required>
+                   <span class="toggleSenha" onclick="toggleSenha('senhaCadastro')">&#128065;</span>
+               </div>
 
-                <button type="submit" class="btnCadastro">Cadastrar</button>
-            </form>
-        </div>
-    </div>
+               <button type="submit" class="btnCadastro">Cadastrar</button>
+           </form>
+       </div>
+   </div>
 
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 </body>
 </html>
