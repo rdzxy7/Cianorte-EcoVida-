@@ -25,12 +25,32 @@
             </div>
             <div class="login">
                 <button id="btnLogin" onclick="abrirLogin()">
-                    <img src="img/boneco login.png" alt="Login" width="24" height="24">   
+                    <img src="img/boneco login.png" alt="Login" width="24" height="24">
                     <span id="loginText">Login</span>
                 </button>
             </div>
         </div>
     </header>
+
+    <!-- Texto rolante -->
+    <div class="rolante-container">
+        <div class="rolante">
+            <p>Recicle seus eletrônicos! | Reduza o lixo eletrônico! | Proteja o meio ambiente! | Doe seus aparelhos!</p>
+        </div>
+    </div>
+
+    <!-- Seção principal -->
+    <main>
+        <section id="inicio" class="section">
+            <h1>Bem-vindo ao Cianorte EcoVida!</h1>
+            <p>Essa é a página inicial do site, mostrando as informações principais.</p>
+        </section>
+
+        <div id="welcomeMessage" class="welcome"></div>
+        <div id="logoutContainer" style="text-align:center; margin-top:20px;">
+            <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
+        </div>
+    </main>
 
     <!-- Modal Login -->
     <div id="loginModal" class="modal">
@@ -75,13 +95,6 @@
             </form>
         </div>
     </div>
-
-    <main>
-        <div id="welcomeMessage" class="welcome"></div>
-        <div id="logoutContainer" style="text-align:center; margin-top:20px;">
-            <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
-        </div>
-    </main>
 
     <script src="script.js"></script>
 </body>

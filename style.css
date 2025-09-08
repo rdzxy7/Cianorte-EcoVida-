@@ -1,4 +1,5 @@
-body {
+/* Reset */
+body, h1, p, input, button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -47,55 +48,101 @@ header {
 }
 
 .login button {
-    background: #00b362;
+    background: #ffffff33;
     border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
     padding: 5px 10px;
     border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
 
-.login img {
-    margin-right: 5px;
+.login button:hover {
+    background: #ffffff55;
 }
 
-/* ==== Estilos do Modal ==== */
+/* Texto rolante */
+.rolante-container {
+    width: 100%;
+    overflow: hidden;
+    background: #00b362;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.rolante {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.rolante p {
+    display: inline-block;
+    padding-left: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    animation: rolar 20s linear infinite;
+}
+
+@keyframes rolar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Modal */
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     background: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 320px;
-    text-align: center;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    width:300px;
+    text-align:center;
 }
 
 .modal-content h2 {
-    margin-top: 0;
-    color: #00CE76;
+    color:#00CE76;
 }
 
 .modal-content input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.modal-content button {
+    width:100%;
+    padding:10px;
+    background:#00CE76;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.modal-content button:hover {
+    background:#00b362;
+}
+
+.fechar {
+    float:right;
+    font-size:22px;
+    cursor:pointer;
+    color:#333;
 }
 
 .senha-container {
@@ -104,75 +151,8 @@ header {
 
 .toggleSenha {
     position: absolute;
-    right: 15px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-}
-
-.btnLogin {
-    background-color: #00CE76;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    width: 95%;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btnLogin:hover {
-    background-color: #00b362;
-}
-
-.btnCadastro {
-    background-color: #ff7100;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    width: 95%;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btnCadastro:hover {
-    background-color: #ff4500;
-}
-
-.fechar {
-    float: right;
-    font-size: 22px;
-    cursor: pointer;
-    color: #333;
-}
-
-.modal-content a {
-    color: #00CE76;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.modal-content a:hover {
-    text-decoration: underline;
-}
-
-.welcome {
-    margin: 20px;
-    font-size: 20px;
-    color: #333;
-    text-align: center;
-}
-
-#btnLogout {
-    background-color: #ff2500;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#btnLogout:hover {
-    background-color: #cc1a00;
 }
