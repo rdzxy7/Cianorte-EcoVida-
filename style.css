@@ -222,31 +222,37 @@ header {
 }
 
 /* ========================= */
-/* RESPONSIVIDADE PARA CELULAR */
+/* RESPONSIVIDADE CORRIGIDA */
 /* ========================= */
 @media (max-width: 768px) {
-    /* Menu vira coluna */
+    header {
+        padding: 10px;
+    }
+
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap; /* permite quebrar linha se precisar */
+        justify-content: space-between;
+    }
+
+    .logo img {
+        width: 100px;
     }
 
     .menu nav {
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
         margin-top: 10px;
     }
 
     .menu nav a {
-        margin: 8px 0;
-        font-size: 16px;
+        font-size: 14px;
+        margin: 5px;
     }
 
     .login {
         margin-top: 10px;
-        width: 100%;
-        text-align: right;
     }
 
     /* Texto rolante menor */
@@ -256,11 +262,12 @@ header {
 
     /* Banner (Hero Section) */
     .hero-section {
-        padding: 60px 20px;
+        padding: 50px 15px;
+        text-align: center;
     }
 
     .hero-section h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .hero-section p {
@@ -268,7 +275,7 @@ header {
     }
 
     .hero-btn {
-        padding: 10px 20px;
+        padding: 8px 18px;
         font-size: 0.9rem;
     }
 
@@ -279,8 +286,17 @@ header {
 }
 
 @media (max-width: 480px) {
+    .menu nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu nav a {
+        font-size: 13px;
+    }
+
     .hero-section h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .hero-section p {
@@ -289,10 +305,6 @@ header {
 
     .hero-btn {
         padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-
-    .menu nav a {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
 }
