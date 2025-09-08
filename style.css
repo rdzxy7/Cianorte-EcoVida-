@@ -297,80 +297,37 @@ header {
     }
 }
 
-header {
-   background-color: #00CE76;
-   padding: 10px 20px;
-   width: 100%;
-   box-sizing: border-box;
-}
+/* RESPONSIVO CABEÇALHO */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: row; /* Mantém os itens na horizontal */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
 
-.container {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-wrap: wrap; /* permite quebra se não couber */
-}
+    .logo img {
+        width: 100px; /* Ajusta o tamanho da logo para celular */
+    }
 
-/* Ajusta o logo */
-.logo img {
-   width: 120px;
-   height: auto;
-}
+    .menu nav {
+        display: flex;
+        gap: 10px; /* Espaçamento menor entre links */
+    }
 
-/* Ajuste do menu */
-.menu nav {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-}
+    .menu nav a {
+        font-size: 14px; /* Fonte menor no celular */
+        margin: 0 5px;
+        padding-bottom: 3px;
+    }
 
-.menu nav a {
-   color: white;
-   text-decoration: none;
-   margin: 0 10px;
-   font-weight: bold;
-   position: relative;
-   padding-bottom: 5px;
-   white-space: nowrap;
-}
+    .login button {
+        padding: 5px 8px; /* Botão menor no celular */
+        font-size: 12px;
+    }
 
-/* Botão login */
-.login {
-   margin-left: 15px;
-}
-
-.login button {
-   background: #ffffff33;
-   border: none;
-   padding: 5px 12px;
-   border-radius: 5px;
-   cursor: pointer;
-   color: white;
-   font-weight: bold;
-}
-
-.login button:hover {
-   background: #ffffff55;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-   .container {
-      flex-direction: column;  /* organiza em coluna */
-      align-items: center;
-   }
-
-   .menu nav {
-      margin: 10px 0;
-      flex-direction: column;
-   }
-
-   .menu nav a {
-      margin: 8px 0;
-      font-size: 16px;
-   }
-
-   .login {
-      margin-top: 10px;
-   }
+    /* Se quiser, o texto rolante pode ter fonte menor no celular */
+    .rolante p {
+        font-size: 14px;
+    }
 }
