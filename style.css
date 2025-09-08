@@ -96,8 +96,10 @@ header {
     align-items: center;
     text-align: center;
     padding: 100px 20px;
-    background: #f9f9f9;
-}
+    
+    background: linear-gradient(270deg, #00CE76, #0077ff);
+    background-size: 400% 400%;
+    animation: gradientAnim 10s ease infinite;
 
 .hero-content {
     max-width: 800px;
