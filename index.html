@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cianorte EcoVida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="#">Início</a>
+                    <a href="#">O que é</a>
+                    <a href="#">Por que</a>
+                    <a href="#">Como funciona</a>
+                    <a href="#">Pontos de coleta</a>
+                    <a href="#">Vídeos</a>
+                    <a href="#">Contato</a>
+                </nav>
+            </div>
+            <div class="login">
+                <button id="btnLogin" onclick="abrirLogin()">
+                    <img src="img/boneco login.png" alt="Login" width="24" height="24">   
+                    <span id="loginText">Login</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharLogin()">&times;</span>
+            <h2>Login</h2>
+            <form id="formLogin">
+                <label for="usuario">E-mail</label>
+                <input type="email" id="usuario" placeholder="Digite seu e-mail" required>
+
+                <label for="senha">Senha</label>
+                <div class="senha-container">
+                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                    <span class="toggleSenha" onclick="toggleSenha('senha')">&#128065;</span>
+                </div>
+
+                <button type="submit" class="btnLogin">Entrar</button>
+            </form>
+            <p>Não tem uma conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <!-- Modal Cadastro -->
+    <div id="cadastroModal" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharCadastro()">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="formCadastro">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+                <label for="senhaCadastro">Senha</label>
+                <div class="senha-container">
+                    <input type="password" id="senhaCadastro" placeholder="Digite sua senha" required>
+                    <span class="toggleSenha" onclick="toggleSenha('senhaCadastro')">&#128065;</span>
+                </div>
+
+                <button type="submit" class="btnCadastro">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <div id="welcomeMessage" class="welcome"></div>
+        <div id="logoutContainer" style="text-align:center; margin-top:20px;">
+            <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
