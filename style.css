@@ -1,4 +1,11 @@
-/* Cabeçalho */
+
+/* Reset */
+body, h1, p, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 header {
     background-color: #00CE76;
     padding: 10px 20px;
@@ -10,7 +17,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* impede de quebrar linha */
 }
 
 .logo img {
@@ -18,18 +24,13 @@ header {
     height: auto;
 }
 
-.menu nav {
-    display: flex;
-    gap: 20px; /* espaçamento entre os links */
-}
-
 .menu nav a {
     color: white;
     text-decoration: none;
+    margin: 0 15px;
     font-weight: bold;
     position: relative;
     padding-bottom: 5px;
-    font-size: 16px;
 }
 
 .menu nav a::after {
@@ -55,52 +56,42 @@ header {
     cursor: pointer;
     color: white;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
 }
 
 .login button:hover {
     background: #ffffff55;
 }
 
-/* ========================= */
-/* RESPONSIVIDADE */
-/* ========================= */
-@media (max-width: 768px) {
+/* RESPONSIVO CABEÇALHO */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: row; /* Mantém horizontal como no desktop */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        width: 100px; /* Logo menor no celular */
+    }
+
     .menu nav {
-        gap: 10px;
+        display: flex;
+        gap: 10px; /* Espaçamento menor entre links */
     }
 
     .menu nav a {
         font-size: 14px;
-    }
-
-    .logo img {
-        width: 90px;
-    }
-
-    .login button {
-        padding: 4px 8px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu nav {
-        gap: 8px;
-    }
-
-    .menu nav a {
-        font-size: 13px;
-    }
-
-    .logo img {
-        width: 80px;
+        margin: 0 5px;
+        padding-bottom: 3px;
     }
 
     .login button {
-        padding: 3px 6px;
+        padding: 5px 8px;
         font-size: 12px;
+    }
+
+    .rolante p {
+        font-size: 14px; /* Texto rolante menor no celular */
     }
 }
