@@ -222,37 +222,31 @@ header {
 }
 
 /* ========================= */
-/* RESPONSIVIDADE CORRIGIDA */
+/* RESPONSIVIDADE PARA CELULAR */
 /* ========================= */
 @media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-
+    /* Menu vira coluna */
     .container {
-        flex-wrap: wrap; /* permite quebrar linha se precisar */
-        justify-content: space-between;
-    }
-
-    .logo img {
-        width: 100px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .menu nav {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        flex-direction: column;
+        width: 100%;
         margin-top: 10px;
     }
 
     .menu nav a {
-        font-size: 14px;
-        margin: 5px;
+        margin: 8px 0;
+        font-size: 16px;
     }
 
     .login {
         margin-top: 10px;
+        width: 100%;
+        text-align: right;
     }
 
     /* Texto rolante menor */
@@ -262,12 +256,11 @@ header {
 
     /* Banner (Hero Section) */
     .hero-section {
-        padding: 50px 15px;
-        text-align: center;
+        padding: 60px 20px;
     }
 
     .hero-section h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .hero-section p {
@@ -275,41 +268,31 @@ header {
     }
 
     .hero-btn {
-        padding: 8px 18px;
+        padding: 10px 20px;
         font-size: 0.9rem;
     }
 
-   /* RESPONSIVO CABEÇALHO */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: row; /* Mantém os itens na horizontal */
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
+    /* Modal ocupa quase toda tela */
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
     }
 
-    .logo img {
-        width: 100px; /* Ajusta o tamanho da logo para celular */
+    .hero-section p {
+        font-size: 0.9rem;
     }
 
-    .menu nav {
-        display: flex;
-        gap: 10px; /* Espaçamento menor entre links */
+    .hero-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
     }
 
     .menu nav a {
-        font-size: 14px; /* Fonte menor no celular */
-        margin: 0 5px;
-        padding-bottom: 3px;
-    }
-
-    .login button {
-        padding: 5px 8px; /* Botão menor no celular */
-        font-size: 12px;
-    }
-
-    /* Se quiser, o texto rolante pode ter fonte menor no celular */
-    .rolante p {
         font-size: 14px;
     }
 }
