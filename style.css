@@ -1,10 +1,4 @@
-/* Reset */
-body, h1, p, input, button {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* Cabeçalho */
 header {
     background-color: #00CE76;
     padding: 10px 20px;
@@ -16,6 +10,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap; /* impede de quebrar linha */
 }
 
 .logo img {
@@ -23,13 +18,18 @@ header {
     height: auto;
 }
 
+.menu nav {
+    display: flex;
+    gap: 20px; /* espaçamento entre os links */
+}
+
 .menu nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
     position: relative;
     padding-bottom: 5px;
+    font-size: 16px;
 }
 
 .menu nav a::after {
@@ -55,256 +55,52 @@ header {
     cursor: pointer;
     color: white;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .login button:hover {
     background: #ffffff55;
 }
 
-/* Texto rolante */
-.rolante-container {
-    width: 100%;
-    overflow: hidden;
-    background: #00b362;
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-
-.rolante {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.rolante p {
-    display: inline-block;
-    padding-left: 100%;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    animation: rolar 20s linear infinite;
-}
-
-@keyframes rolar {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* HERO SECTION */
-.hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    background: #f9f9f9;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.hero-icon img {
-    margin-bottom: 20px;
-    animation: pulse 2s infinite;
-}
-
-.hero-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-.hero-section .green {
-    color: #00CE76;
-    font-weight: bold;
-}
-
-.hero-section .blue {
-    color: #0077ff;
-    font-weight: bold;
-}
-
-.hero-section p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-.hero-btn {
-    display: inline-block;
-    background: #00CE76;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.hero-btn:hover {
-    background: #00b362;
-    transform: scale(1.05);
-}
-
-/* Animação do ícone */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.5);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.modal-content {
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    width:300px;
-    text-align:center;
-}
-
-.modal-content h2 {
-    color:#00CE76;
-}
-
-.modal-content input {
-    width:90%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-
-.modal-content button {
-    width:100%;
-    padding:10px;
-    background:#00CE76;
-    color:white;
-    border:none;
-    border-radius:5px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.modal-content button:hover {
-    background:#00b362;
-}
-
-.fechar {
-    float:right;
-    font-size:22px;
-    cursor:pointer;
-    color:#333;
-}
-
-.senha-container {
-    position: relative;
-}
-
-.toggleSenha {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
 /* ========================= */
-/* RESPONSIVIDADE CORRIGIDA */
+/* RESPONSIVIDADE */
 /* ========================= */
 @media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-
-    .container {
-        flex-wrap: wrap; /* permite quebrar linha se precisar */
-        justify-content: space-between;
-    }
-
-    .logo img {
-        width: 100px;
-    }
-
     .menu nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 10px;
-        margin-top: 10px;
     }
 
     .menu nav a {
         font-size: 14px;
-        margin: 5px;
     }
 
-    .login {
-        margin-top: 10px;
+    .logo img {
+        width: 90px;
     }
 
-    /* Texto rolante menor */
-    .rolante p {
-        font-size: 14px;
-    }
-
-    /* Banner (Hero Section) */
-    .hero-section {
-        padding: 50px 15px;
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 1.6rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
-    }
-
-    .hero-btn {
-        padding: 8px 18px;
-        font-size: 0.9rem;
-    }
-
-    /* Modal ocupa quase toda tela */
-    .modal-content {
-        width: 90%;
+    .login button {
+        padding: 4px 8px;
+        font-size: 13px;
     }
 }
 
 @media (max-width: 480px) {
     .menu nav {
-        flex-direction: column;
-        align-items: center;
+        gap: 8px;
     }
 
     .menu nav a {
         font-size: 13px;
     }
 
-    .hero-section h1 {
-        font-size: 1.4rem;
+    .logo img {
+        width: 80px;
     }
 
-    .hero-section p {
-        font-size: 0.9rem;
-    }
-
-    .hero-btn {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+    .login button {
+        padding: 3px 6px;
+        font-size: 12px;
     }
 }
