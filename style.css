@@ -488,3 +488,151 @@ conteudo {
   }
 }
 
+html {
+   scroll-behavior: smooth;
+   margin: 0;
+   padding: 0;
+}
+
+/* Seções tipo banner */
+section {
+   padding: 0;
+   margin: 0;
+   text-align: center;
+   max-width: 100%;
+}
+
+section h2 {
+   margin: 30px 0 15px;
+   font-size: 1.8rem;
+   color: #333;
+}
+
+/* Grid dos cards principais */
+.cards {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: 40px; /* espaçamento maior entre os cards */
+   margin: 40px auto;
+   justify-items: center;
+   max-width: 1200px;
+   padding: 0 20px;
+}
+
+.card {
+   text-align: center;
+   padding: 15px; /* respiro interno */
+   transition: transform 0.3s;
+   width: 100%;
+   max-width: 260px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background: none;
+   box-shadow: none;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+}
+
+.card img {
+   width: 100%;
+   max-height: 180px;
+   object-fit: cover;
+   border-radius: 12px;
+   margin-bottom: 12px; /* espaço entre a imagem e o texto */
+   cursor: pointer;
+}
+
+.card h3 {
+   margin: 10px 0 6px;
+   font-size: 1.2rem;
+   color: #222;
+}
+
+.card p {
+   font-size: 0.95rem;
+   color: #444;
+}
+
+/* Galeria de imagens */
+.galeria {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 15px; /* espaçamento entre imagens */
+   justify-items: center;
+   margin: 0 auto;
+   padding: 0 10px 30px;
+   width: 100%;
+}
+
+.galeria img {
+   width: 100%;
+   max-width: 100%;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 0;
+   transition: transform 0.3s;
+}
+
+.galeria img:hover {
+   transform: scale(1.03);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+   .cards {
+      gap: 25px; /* menos espaço no mobile */
+   }
+   .card {
+      max-width: 100%;
+   }
+   .galeria img {
+      height: auto;
+   }
+}
+
+/* Banner */
+#banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* ocupa a tela toda */
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  text-align: center;
+}
+
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-animada {
+  width: 180px;   /* tamanho da imagem */
+  height: auto;
+  animation: girar 10s linear infinite; /* chama a animação */
+  margin-bottom: 20px;
+}
+
+/* Animação de rotação */
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#banner p {
+  font-size: 1.2rem;
+}
