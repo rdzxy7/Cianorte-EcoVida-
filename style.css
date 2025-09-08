@@ -296,3 +296,38 @@ header {
         font-size: 14px;
     }
 }
+
+/* RESPONSIVO CABEÇALHO */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: row; /* Mantém os itens na horizontal */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        width: 100px; /* Ajusta o tamanho da logo para celular */
+    }
+
+    .menu nav {
+        display: flex;
+        gap: 10px; /* Espaçamento menor entre links */
+    }
+
+    .menu nav a {
+        font-size: 14px; /* Fonte menor no celular */
+        margin: 0 5px;
+        padding-bottom: 3px;
+    }
+
+    .login button {
+        padding: 5px 8px; /* Botão menor no celular */
+        font-size: 12px;
+    }
+
+    /* Se quiser, o texto rolante pode ter fonte menor no celular */
+    .rolante p {
+        font-size: 14px;
+    }
+}
