@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #00CE76;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    transition: width 0.5s ease-in-out;
+}
+
+.menu nav a:hover::after {
+    width: 100%;
+}
+
+.login button {
+    background: #00b362;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.login img {
+    margin-right: 5px;
+}
+
+/* ==== Estilos do Modal ==== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #00CE76;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.senha-container {
+    position: relative;
+}
+
+.toggleSenha {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.btnLogin {
+    background-color: #00CE76;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnLogin:hover {
+    background-color: #00b362;
+}
+
+.btnCadastro {
+    background-color: #ff7100;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnCadastro:hover {
+    background-color: #ff4500;
+}
+
+.fechar {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-content a {
+    color: #00CE76;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+.welcome {
+    margin: 20px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#btnLogout {
+    background-color: #ff2500;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnLogout:hover {
+    background-color: #cc1a00;
+}
