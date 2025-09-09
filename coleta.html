@@ -1,61 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pontos de Coleta</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Banner */
-    .banner {
-      width: 100%;
-      height: 300px;
-      background: url("img/banner-coleta.jpg") no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
+<!-- Seção do Banner Animado -->
+<section class="banner-animado">
+  <div class="banner-texto">
+    <h1>Recicle e Transforme o Futuro</h1>
+    <p>Participe da nossa campanha de reciclagem de lixo eletrônico e ajude o planeta!</p>
+  </div>
+</section>
 
-    .banner h1 {
-      font-size: 2.5rem;
-      background: rgba(0,0,0,0.5);
-      padding: 15px 25px;
-      border-radius: 10px;
-    }
+<style>
+/* Banner Animado */
+.banner-animado {
+  width: 100%;
+  height: 300px;
+  background: url('img/banner-coleta.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; /* Espaçamento opcional */
+}
 
-    main {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-  </style>
-</head>
-<body>
-  <!-- Cabeçalho -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="coleta.html" class="ativo">Ponto de Coleta</a></li>
-      </ul>
-    </nav>
-  </header>
+.banner-animado::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* Fundo escuro para destacar o texto */
+  z-index: 1;
+}
 
-  <!-- Banner -->
-  <section class="banner">
-    <h1>Pontos de Coleta</h1>
-  </section>
+.banner-texto {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 2;
+  animation: slideIn 2s ease-out forwards;
+}
 
-  <!-- Conteúdo -->
-  <main>
-    <p>Aqui você encontra informações sobre os pontos de coleta de lixo eletrônico em sua cidade.</p>
-    <ul>
-      <li><strong>Ponto 1:</strong> Praça Central de Cianorte</li>
-      <li><strong>Ponto 2:</strong> Universidade Estadual de Maringá – Campus Cianorte</li>
-      <li><strong>Ponto 3:</strong> Ecoponto Municipal – Av. Paraná, 1234</li>
-    </ul>
-  </main>
-</body>
-</html>
+.banner-texto h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 2s forwards 0.5s;
+}
+
+.banner-texto p {
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+</style>
