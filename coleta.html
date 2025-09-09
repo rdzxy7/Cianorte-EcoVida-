@@ -5,8 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pontos de Coleta</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Banner */
+    .banner {
+      width: 100%;
+      height: 300px;
+      background: url("img/banner-coleta.jpg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 15px 25px;
+      border-radius: 10px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+  </style>
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header>
     <nav>
       <ul>
@@ -16,9 +43,19 @@
     </nav>
   </header>
 
-  <main>
+  <!-- Banner -->
+  <section class="banner">
     <h1>Pontos de Coleta</h1>
+  </section>
+
+  <!-- Conteúdo -->
+  <main>
     <p>Aqui você encontra informações sobre os pontos de coleta de lixo eletrônico em sua cidade.</p>
+    <ul>
+      <li><strong>Ponto 1:</strong> Praça Central de Cianorte</li>
+      <li><strong>Ponto 2:</strong> Universidade Estadual de Maringá – Campus Cianorte</li>
+      <li><strong>Ponto 3:</strong> Ecoponto Municipal – Av. Paraná, 1234</li>
+    </ul>
   </main>
 </body>
 </html>
