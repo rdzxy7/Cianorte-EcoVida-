@@ -690,3 +690,47 @@ section h2 {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Texto rolante */
+.rolante-container {
+   text-align: center;
+   padding: 10px;
+   background: #27ae60;
+   color: white;
+   font-size: 1.1rem;
+}
+
+.rolante p {
+   margin: 0;
+}
+
+/* Botão dentro do texto */
+.btn-inline {
+   display: inline-block;
+   margin-left: 8px;
+   padding: 5px 12px;
+   background: #f1c40f;
+   color: #000;
+   font-weight: bold;
+   border-radius: 6px;
+   text-decoration: none;
+   transition: 0.3s;
+   animation: pulse 2s infinite;
+}
+
+.btn-inline:hover {
+   background: #e67e22;
+   color: white;
+   transform: scale(1.05);
+}
+
+@keyframes pulse {
+   0% { box-shadow: 0 0 0 0 rgba(241,196,15,0.7); }
+   70% { box-shadow: 0 0 0 10px rgba(241,196,15,0); }
+   100% { box-shadow: 0 0 0 0 rgba(241,196,15,0); }
+}
