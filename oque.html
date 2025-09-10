@@ -7,47 +7,41 @@
    <link rel="stylesheet" href="style.css">
    <style>
        /* CABEÇALHO */
-       header .container {
-           display: flex;
-           align-items: center; /* centraliza verticalmente */
-           padding: 10px 20px;
-           justify-content: space-between; /* espaço entre logo e menu */
-       }
+      header .container {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    padding: 10px 50px; /* espaçamento maior nas laterais */
+    justify-content: flex-start; /* logo à esquerda */
+    position: relative;
+}
 
-       /* Logo à esquerda */
-       header .logo {
-           flex: 0 0 auto; /* mantém tamanho da logo */
-       }
+header .logo {
+    flex: 0 0 auto;
+}
 
-       header .logo img {
-           height: 60px;
-       }
+header .logo img {
+    height: 60px;
+}
 
-       /* Menu centralizado */
-       header nav {
-           display: flex;
-           gap: 20px;
-           margin: 0 auto; /* centraliza o menu */
-       }
+/* Menu centralizado na tela, mantendo a logo à esquerda */
+header nav {
+    position: absolute;
+    left: 50%; /* posição horizontal central */
+    transform: translateX(-50%); /* centraliza completamente */
+    display: flex;
+    gap: 20px;
+}
 
-       header nav a {
-           color: black;
-           text-decoration: none;
-           font-weight: bold;
-       }
+header nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-       header nav a.ativo {
-           text-decoration: underline; /* indica página atual */
-       }
+header nav a.ativo {
+    text-decoration: underline;
+}
 
-       /* Hero section centralizada */
-       .hero-section {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           text-align: center;
-           padding: 100px 20px; 
-       }
    </style>
 </head>
 <body>
