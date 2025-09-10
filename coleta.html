@@ -11,7 +11,7 @@
         scroll-behavior: smooth;
       }
 
-      /* Estilo do botão da nova seção */
+      /* Estilo do botão */
       .botao-link {
           display: inline-block;
           padding: 12px 25px;
@@ -21,6 +21,7 @@
           font-weight: bold;
           border-radius: 8px;
           transition: background-color 0.3s ease;
+          margin-top: 15px;
       }
 
       .botao-link:hover {
@@ -45,32 +46,29 @@
       /* Texto sobre a imagem */
       .texto-sobre-imagem {
           position: absolute;
-          top: 20px;
+          top: 50%;
           left: 50%;
-          transform: translateX(-50%);
+          transform: translate(-50%, -50%);
           color: white;
-          font-size: 24px;
+          font-size: 20px;
           font-weight: bold;
-          text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+          text-align: center;
+          text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+          line-height: 1.6;
+          max-width: 90%;
       }
 
-      /* Texto explicativo acima da imagem */
-      .texto-explicativo {
+      /* Texto abaixo da imagem */
+      .texto-abaixo-imagem {
           max-width: 900px;
-          margin: 0 auto 30px auto;
+          margin: 30px auto;
           padding: 20px;
           text-align: center;
           font-size: 18px;
           line-height: 1.8;
       }
 
-      .texto-explicativo h2 {
-          font-size: 28px;
-          margin-bottom: 20px;
-          color: #2e7d32;
-      }
-
-      .texto-explicativo p {
+      .texto-abaixo-imagem p {
           margin-bottom: 18px;
       }
    </style>
@@ -127,22 +125,22 @@
            </div>
        </section>
 
-       <!-- Texto explicativo antes do banner -->
-       <section class="texto-explicativo">
-           <h2>🌍 Bem-vindo ao Cianorte EcoVida</h2>
-           <p>Nosso objetivo é tornar Cianorte uma cidade mais limpa, sustentável e consciente.</p>
-           <p>Aqui você encontra informações sobre pontos de coleta de resíduos e dicas para fazer o descarte correto do lixo doméstico, contribuindo para o bem-estar da comunidade e para a preservação do meio ambiente.</p>
-           <p>Separar o lixo e destiná-lo de forma correta é uma atitude simples que faz toda a diferença.</p>
-           <p>Juntos, podemos construir uma cidade mais organizada, saudável e comprometida com as futuras gerações.</p>
-           <p>➡️ Confira os pontos de coleta disponíveis em Cianorte e faça parte dessa mudança.</p>
+       <!-- Nova seção: imagem com texto sobreposto e botão -->
+       <section class="imagem-botao-section">
+           <div class="texto-sobre-imagem">
+               🌍 Bem-vindo ao Cianorte EcoVida<br><br>
+               Nosso objetivo é tornar Cianorte uma cidade mais limpa, sustentável e consciente.<br><br>
+               Aqui você encontra informações sobre pontos de coleta de resíduos e dicas para fazer o descarte correto do lixo doméstico, contribuindo para o bem-estar da comunidade e para a preservação do meio ambiente.<br><br>
+               ➡️ Confira os pontos de coleta disponíveis em Cianorte e faça parte dessa mudança
+           </div>
+           <img src="img/banner-site_(340).jpg" alt="Imagem Descritiva">
+           <a href="https://cianorte.my.canva.site/coleta-de-lixo" target="_blank" class="botao-link">Saiba Mais</a>
        </section>
 
-       <!-- Nova seção: imagem com botão -->
-       <section class="imagem-botao-section">
-           <div class="texto-sobre-imagem">Conheça mais sobre os pontos de coleta em Cianorte</div>
-           <img src="img/banner-site_(340).jpg" alt="Imagem Descritiva">
-           <br><br>
-           <a href="https://cianorte.my.canva.site/coleta-de-lixo" target="_blank" class="botao-link">Saiba Mais</a>
+       <!-- Texto abaixo da imagem e botão -->
+       <section class="texto-abaixo-imagem">
+           <p>Separar o lixo e destiná-lo de forma correta é uma atitude simples que faz toda a diferença.</p>
+           <p>Juntos, podemos construir uma cidade mais organizada, saudável e comprometida com as futuras gerações.</p>
        </section>
 
 
