@@ -476,15 +476,18 @@ conteudo {
   transform: scale(1.05);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
-  .subcards {
-    grid-template-columns: repeat(2, 1fr);
+  header {
+    flex-direction: row; /* continua horizontal */
+    flex-wrap: wrap; /* se faltar espaço, quebra bonitinho */
+    justify-content: space-between; /* ajusta espaço */
+    align-items: center;
   }
-}
-@media (max-width: 480px) {
-  .subcards {
-    grid-template-columns: 1fr;
+
+  header nav {
+    flex-direction: row; /* deixa os links na horizontal */
+    gap: 10px; /* espaço entre links */
+    flex-wrap: wrap; /* para não estourar */
   }
 }
 
@@ -580,18 +583,18 @@ section h2 {
    transform: scale(1.03);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-   .cards {
-      gap: 25px; /* menos espaço no mobile */
-   }
-   .card {
-      max-width: 100%;
-   }
-   .galeria img {
-      height: auto;
-   }
+header {
+  display: flex;
+  justify-content: space-between; /* ou center, dependendo do que você quer */
+  align-items: center;
+  flex-wrap: wrap; /* evita quebrar feio */
 }
+
+header nav {
+  display: flex;
+  gap: 15px; /* espaço entre os links */
+}
+
 
 /* Banner */
 #banner {
@@ -734,26 +737,3 @@ html {
    70% { box-shadow: 0 0 0 10px rgba(241,196,15,0); }
    100% { box-shadow: 0 0 0 0 rgba(241,196,15,0); }
 } 
-
-header {
-  display: flex;
-  justify-content: space-between; /* ou center, dependendo do que você quer */
-  align-items: center;
-  flex-wrap: wrap; /* evita quebrar feio */
-}
-
-header nav {
-  display: flex;
-  gap: 15px; /* espaço entre os links */
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; /* se quiser em coluna */
-  }
-
-  header nav {
-    flex-direction: column; /* deixa os links um abaixo do outro */
-    align-items: center;
-  }
-}
