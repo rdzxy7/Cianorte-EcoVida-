@@ -228,30 +228,28 @@ header {
 /* RESPONSIVIDADE PARA CELULAR */
 /* ========================= */
 @media (max-width: 768px) {
-    /* Container e menu continuam em linha */
+    /* Menu vira coluna */
     .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .menu nav {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .menu nav a {
-        margin: 5px;
-        font-size: 14px;
+        margin: 8px 0;
+        font-size: 16px;
     }
 
     .login {
-        margin-top: 5px;
+        margin-top: 10px;
+        width: 100%;
         text-align: right;
-        width: auto;
     }
 
     /* Texto rolante menor */
@@ -298,9 +296,10 @@ header {
     }
 
     .menu nav a {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
+
 
 /* Reset */
 body, h1, h2, h3, p, input, button {
@@ -612,18 +611,22 @@ section h2 {
   align-items: center;
 }
 
-/* Animação removida */
 .logo-animada {
-  width: 180px;
+  width: 180px;   /* tamanho da imagem */
   height: auto;
-  animation: none; /* animação removida */
+  animation: girar 10s linear infinite; /* chama a animação */
   margin-bottom: 20px;
 }
 
-/* @keyframes girar {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
+/* Animação de rotação */
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 #banner h1 {
   font-size: 2.5rem;
@@ -632,102 +635,4 @@ section h2 {
 
 #banner p {
   font-size: 1.2rem;
-}
-
-/* Banner */
-.banner-animado {
-  width: 100%;
-  height: 400px;
-  background: url('img/banner.jpg') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.banner-animado::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4); /* Fundo escuro para destaque do texto */
-  z-index: 1;
-}
-
-/* Texto do banner */
-.banner-texto {
-  position: relative;
-  color: white;
-  text-align: center;
-  z-index: 2;
-  animation: slideIn 2s ease-out forwards;
-}
-
-.banner-texto h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  opacity: 0;
-  animation: fadeIn 2s forwards 0.5s; /* Delay de 0.5s */
-}
-
-.banner-texto p {
-  font-size: 1.2rem;
-  opacity: 0;
-  animation: fadeIn 2s forwards 1s; /* Delay de 1s */
-}
-
-/* Animações */
-@keyframes slideIn {
-  0% { transform: translateY(-50px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Rolagem suave */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Texto rolante */
-.rolante-container {
-   text-align: center;
-   padding: 10px;
-   background: #27ae60;
-   color: white;
-   font-size: 1.1rem;
-}
-
-.rolante p {
-   margin: 0;
-}
-
-/* Botão dentro do texto */
-.btn-inline {
-   display: inline-block;
-   margin-left: 8px;
-   padding: 5px 12px;
-   background: #f1c40f;
-   color: #000;
-   font-weight: bold;
-   border-radius: 6px;
-   text-decoration: none;
-   transition: 0.3s;
-   animation: pulse 2s infinite;
-}
-
-.btn-inline:hover {
-   background: #e67e22;
-   color: white;
-   transform: scale(1.05);
-}
-
-@keyframes pulse {
-   0% { box-shadow: 0 0 0 0 rgba(241,196,15,0.7); }
-   70% { box-shadow: 0 0 0 10px rgba(241,196,15,0); }
-   100% { box-shadow: 0 0 0 0 rgba(241,196,15,0); }
 }
