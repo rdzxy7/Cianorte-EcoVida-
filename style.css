@@ -5,9 +5,6 @@ body, h1, p, input, button {
     font-family: Arial, sans-serif;
 }
 
-/* ========================= */
-/* CABEÇALHO */
-/* ========================= */
 header {
     background-color: #00CE76;
     padding: 10px 20px;
@@ -92,15 +89,14 @@ header {
     100% { transform: translateX(-100%); }
 }
 
-/* ========================= */
-/* HERO SECTION / BANNER */
-/* ========================= */
+/* HERO SECTION */
 .hero-section {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 100px 20px;
+   
     background: linear-gradient(270deg, #00CE76, #0077ff);
     background-size: 400% 400%;
     animation: gradientAnim 10s ease infinite;
@@ -160,9 +156,7 @@ header {
     100% { transform: scale(1); }
 }
 
-/* ========================= */
-/* MODAL */
-/* ========================= */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -231,40 +225,31 @@ header {
 }
 
 /* ========================= */
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE PARA CELULAR */
 /* ========================= */
 @media (max-width: 768px) {
-    /* Mantém cabeçalho horizontal */
+    /* Menu vira coluna */
     .container {
-        flex-direction: row; /* não muda para coluna */
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .logo img {
-        width: 100px; 
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .menu nav {
         display: flex;
-        flex-direction: row; 
-        flex-wrap: wrap;
-        gap: 8px; 
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .menu nav a {
-        margin: 0 5px;
-        font-size: 14px;
+        margin: 8px 0;
+        font-size: 16px;
     }
 
     .login {
+        margin-top: 10px;
+        width: 100%;
         text-align: right;
-    }
-
-    .login button {
-        padding: 4px 8px;
-        font-size: 13px;
     }
 
     /* Texto rolante menor */
@@ -290,26 +275,13 @@ header {
         font-size: 0.9rem;
     }
 
+    /* Modal ocupa quase toda tela */
     .modal-content {
         width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .logo img {
-        width: 70px;
-    }
-
-    .menu nav a {
-        font-size: 12px;
-        margin: 0 4px;
-    }
-
-    .login button {
-        padding: 3px 6px;
-        font-size: 12px;
-    }
-
     .hero-section h1 {
         font-size: 1.5rem;
     }
@@ -322,15 +294,225 @@ header {
         padding: 8px 16px;
         font-size: 0.85rem;
     }
+
+    .menu nav a {
+        font-size: 14px;
+    }
+}
+
+
+/* Reset */
+body, h1, h2, h3, p, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #00CE76;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
 /* ========================= */
-/* CARDS */
-/* ========================= */
+/* Seção O que é + Cards */
+#oque {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* cards no topo */
+  text-align: center;
+
+  background: linear-gradient(270deg, #00CE76, #0077ff);
+  background-size: 400% 400%;
+  animation: gradientAnim 10s ease infinite;
+  padding-top: 60px;
+}
+
+@keyframes gradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-container h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.section-container p {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards lado a lado */
+  gap: 25px;
+}
+
+.card {
+  background: transparent; /* fundo transparente */
+  border: none;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card p {
+  font-size: 14px;
+  color: white;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.modal {
+    display: none;   /* aqui está o certo */
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    justify-content:center;
+    align-items:center;
+}
+
+conteudo {
+  display: none;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.conteudo.active {
+  display: block;
+}
+
+.conteudo h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.subcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  justify-content: center;
+}
+
+.subcard {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.subcard img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.subcard h4 {
+  color: white;
+  font-size: 16px;
+}
+
+.subcard:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .subcards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .subcards {
+    grid-template-columns: 1fr;
+  }
+}
+
+html {
+   scroll-behavior: smooth;
+   margin: 0;
+   padding: 0;
+}
+
+/* Seções tipo banner */
+section {
+   padding: 0;
+   margin: 0;
+   text-align: center;
+   max-width: 100%;
+}
+
+section h2 {
+   margin: 30px 0 15px;
+   font-size: 1.8rem;
+   color: #333;
+}
+
+/* Grid dos cards principais */
 .cards {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-   gap: 40px;
+   gap: 40px; /* espaçamento maior entre os cards */
    margin: 40px auto;
    justify-items: center;
    max-width: 1200px;
@@ -339,7 +521,7 @@ header {
 
 .card {
    text-align: center;
-   padding: 15px;
+   padding: 15px; /* respiro interno */
    transition: transform 0.3s;
    width: 100%;
    max-width: 260px;
@@ -359,7 +541,7 @@ header {
    max-height: 180px;
    object-fit: cover;
    border-radius: 12px;
-   margin-bottom: 12px;
+   margin-bottom: 12px; /* espaço entre a imagem e o texto */
    cursor: pointer;
 }
 
@@ -374,13 +556,11 @@ header {
    color: #444;
 }
 
-/* ========================= */
-/* GALERIA DE IMAGENS */
-/* ========================= */
+/* Galeria de imagens */
 .galeria {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-   gap: 15px;
+   gap: 15px; /* espaçamento entre imagens */
    justify-items: center;
    margin: 0 auto;
    padding: 0 10px 30px;
@@ -400,15 +580,26 @@ header {
    transform: scale(1.03);
 }
 
-/* ========================= */
-/* BANNER ANIMADO */
-/* ========================= */
+/* Responsividade */
+@media (max-width: 768px) {
+   .cards {
+      gap: 25px; /* menos espaço no mobile */
+   }
+   .card {
+      max-width: 100%;
+   }
+   .galeria img {
+      height: auto;
+   }
+}
+
+/* Banner */
 #banner {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100vh; /* ocupa a tela toda */
   background: linear-gradient(135deg, #4caf50, #2e7d32);
   color: white;
   text-align: center;
@@ -421,15 +612,20 @@ header {
 }
 
 .logo-animada {
-  width: 180px;
+  width: 180px;   /* tamanho da imagem */
   height: auto;
-  animation: girar 10s linear infinite;
+  animation: girar 10s linear infinite; /* chama a animação */
   margin-bottom: 20px;
 }
 
+/* Animação de rotação */
 @keyframes girar {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #banner h1 {
@@ -441,6 +637,7 @@ header {
   font-size: 1.2rem;
 }
 
+/* Banner */
 .banner-animado {
   width: 100%;
   height: 400px;
@@ -457,10 +654,11 @@ header {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.4); /* Fundo escuro para destaque do texto */
   z-index: 1;
 }
 
+/* Texto do banner */
 .banner-texto {
   position: relative;
   color: white;
@@ -473,15 +671,16 @@ header {
   font-size: 2.5rem;
   margin-bottom: 15px;
   opacity: 0;
-  animation: fadeIn 2s forwards 0.5s;
+  animation: fadeIn 2s forwards 0.5s; /* Delay de 0.5s */
 }
 
 .banner-texto p {
   font-size: 1.2rem;
   opacity: 0;
-  animation: fadeIn 2s forwards 1s;
+  animation: fadeIn 2s forwards 1s; /* Delay de 1s */
 }
 
+/* Animações */
 @keyframes slideIn {
   0% { transform: translateY(-50px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -492,9 +691,12 @@ header {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ========================= */
-/* TEXTO ROLANTE COM BOTÃO */
-/* ========================= */
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Texto rolante */
 .rolante-container {
    text-align: center;
    padding: 10px;
@@ -507,6 +709,7 @@ header {
    margin: 0;
 }
 
+/* Botão dentro do texto */
 .btn-inline {
    display: inline-block;
    margin-left: 8px;
@@ -530,9 +733,4 @@ header {
    0% { box-shadow: 0 0 0 0 rgba(241,196,15,0.7); }
    70% { box-shadow: 0 0 0 10px rgba(241,196,15,0); }
    100% { box-shadow: 0 0 0 0 rgba(241,196,15,0); }
-}
-
-/* Rolagem suave */
-html {
-    scroll-behavior: smooth;
-}
+} 
