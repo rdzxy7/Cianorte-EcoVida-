@@ -37,21 +37,19 @@
           font-weight: bold;
           border-radius: 8px;
           transition: background-color 0.3s ease;
-          margin-top: 15px;
+          margin-top: 20px;
       }
 
       .botao-link:hover {
           background-color: #45a049;
       }
 
-      /* Centralizando seção do banner e botão */
+      /* Centralizando seção da imagem e botão */
       .imagem-botao-section {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
           margin: 40px 0;
-          position: relative;
           width: 80%;
           margin-left: auto;
           margin-right: auto;
@@ -64,36 +62,34 @@
           border-radius: 10px;
       }
 
-      /* Texto sobre a imagem com espaçamento maior */
-      .texto-sobre-imagem {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: white;
-          font-size: 20px;
-          font-weight: bold;
+      /* Texto acima da imagem */
+      .texto-acima-imagem {
+          max-width: 900px;
+          margin: 30px auto 20px auto; /* espaçamento acima e abaixo */
+          padding: 0 20px;
           text-align: center;
-          text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-          line-height: 2.2;
-          max-width: 90%;
+          font-size: 20px;
+          line-height: 1.8;
+          color: white;
+          font-weight: bold;
       }
 
       /* Texto abaixo da imagem */
       .texto-abaixo-imagem {
           max-width: 900px;
-          margin: 30px auto;
-          padding: 20px;
+          margin: 40px auto;
+          padding: 0 20px;
           text-align: center;
           font-size: 18px;
           line-height: 1.8;
+          color: white;
       }
 
       .texto-abaixo-imagem p {
           margin-bottom: 18px;
       }
 
-      /* Hero section centralizada (se quiser manter separado do banner) */
+      /* Hero section centralizada */
       .hero-section {
           display: flex;
           justify-content: center;
@@ -136,93 +132,27 @@
        </div>
    </div>
 
-   <!-- Seção principal (HERO BANNER) -->
    <main>
-       <section id="inicio" class="hero-section">
-           <div class="hero-content">
-               <div class="hero-icon">
-                   <img src="img/coleta-icon.png" alt="Coleta" width="150" class="logo animada">
-               </div>
-               <h1>
-                   Encontre <span class="green">Pontos de Coleta</span>
-                   e ajude em um <span class="blue">Futuro Sustentável</span>
-               </h1>
-               <p>
-                   Aqui você encontra informações sobre os pontos de coleta de lixo eletrônico 
-                   em sua cidade. Leve celulares, computadores, pilhas, baterias e outros 
-                   equipamentos eletrônicos para locais autorizados e contribua com a reciclagem.
-               </p>
-               <a href="#lista-coleta" class="hero-btn">Ver Locais →</a>
-           </div>
+       <!-- Primeiro texto acima da imagem -->
+       <section class="texto-acima-imagem">
+           🌍 Bem-vindo ao Cianorte EcoVida<br><br>
+           Nosso objetivo é tornar Cianorte uma cidade mais limpa, sustentável e consciente.<br><br>
+           Aqui você encontra informações sobre pontos de coleta de resíduos e dicas para fazer o descarte correto do lixo doméstico, contribuindo para o bem-estar da comunidade e para a preservação do meio ambiente.<br><br>
+           ➡️ Confira os pontos de coleta disponíveis em Cianorte e faça parte dessa mudança
        </section>
 
-       <!-- Banner com texto sobreposto e botão centralizado -->
+       <!-- Imagem com botão -->
        <section class="imagem-botao-section">
-           <div class="texto-sobre-imagem">
-               🌍 Bem-vindo ao Cianorte EcoVida<br><br>
-               Nosso objetivo é tornar Cianorte uma cidade mais limpa, sustentável e consciente.<br><br>
-               Aqui você encontra informações sobre pontos de coleta de resíduos e dicas para fazer o descarte correto do lixo doméstico, contribuindo para o bem-estar da comunidade e para a preservação do meio ambiente.<br><br>
-               ➡️ Confira os pontos de coleta disponíveis em Cianorte e faça parte dessa mudança
-           </div>
            <img src="img/banner-site_(340).jpg" alt="Imagem Descritiva">
            <a href="https://cianorte.my.canva.site/coleta-de-lixo" target="_blank" class="botao-link">Saiba Mais</a>
        </section>
 
-       <!-- Texto abaixo da imagem e botão -->
+       <!-- Segundo texto abaixo da imagem e botão -->
        <section class="texto-abaixo-imagem">
            <p>Separar o lixo e destiná-lo de forma correta é uma atitude simples que faz toda a diferença.</p>
            <p>Juntos, podemos construir uma cidade mais organizada, saudável e comprometida com as futuras gerações.</p>
        </section>
-
-       <div id="welcomeMessage" class="welcome"></div>
-       <div id="logoutContainer" style="text-align:center; margin-top:20px;">
-           <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
-       </div>
    </main>
-
-   <!-- Modal Login -->
-   <div id="loginModal" class="modal">
-       <div class="modal-content">
-           <span class="fechar" onclick="fecharLogin()">&times;</span>
-           <h2>Login</h2>
-           <form id="formLogin">
-               <label for="usuario">E-mail</label>
-               <input type="email" id="usuario" placeholder="Digite seu e-mail" required>
-
-               <label for="senha">Senha</label>
-               <div class="senha-container">
-                   <input type="password" id="senha" placeholder="Digite sua senha" required>
-                   <span class="toggleSenha" onclick="toggleSenha('senha')">&#128065;</span>
-               </div>
-
-               <button type="submit" class="btnLogin">Entrar</button>
-           </form>
-           <p>Não tem uma conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
-       </div>
-   </div>
-
-   <!-- Modal Cadastro -->
-   <div id="cadastroModal" class="modal">
-       <div class="modal-content">
-           <span class="fechar" onclick="fecharCadastro()">&times;</span>
-           <h2>Cadastro</h2>
-           <form id="formCadastro">
-               <label for="nome">Nome</label>
-               <input type="text" id="nome" placeholder="Digite seu nome" required>
-
-               <label for="email">E-mail</label>
-               <input type="email" id="email" placeholder="Digite seu e-mail" required>
-
-               <label for="senhaCadastro">Senha</label>
-               <div class="senha-container">
-                   <input type="password" id="senhaCadastro" placeholder="Digite sua senha" required>
-                   <span class="toggleSenha" onclick="toggleSenha('senhaCadastro')">&#128065;</span>
-               </div>
-
-               <button type="submit" class="btnCadastro">Cadastrar</button>
-           </form>
-       </div>
-   </div>
 
    <script src="script.js"></script>
 </body>
