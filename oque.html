@@ -6,21 +6,23 @@
    <title>O que é - Cianorte EcoVida</title>
    <link rel="stylesheet" href="style.css">
    <style>
-       /* Cabeçalho centralizado, logo à esquerda */
+       /* Cabeçalho centralizado, logo colada à esquerda */
        header .container {
            display: flex;
-           justify-content: center; /* centraliza todo o conteúdo do container */
+           justify-content: center; /* centraliza o container */
            align-items: center; /* centraliza verticalmente */
            padding: 10px 20px;
            gap: 50px; /* espaço entre logo e menu */
        }
 
+       /* Ajuste apenas da logo */
        header .logo {
-           flex: 0 0 auto; /* logo mantém seu tamanho e fica à esquerda */
+           margin-right: auto; /* logo colada à esquerda */
        }
 
        header .logo img {
            height: 60px; /* tamanho do logo */
+           display: block;
        }
 
        header nav {
@@ -50,6 +52,8 @@
                <nav>
                    <a href="index.html">Início</a>
                    <a href="oque.html" class="ativo">O que é</a>
+                   <a href="index.html#"></a>
+                   <a href="index.html#"></a>
                    <a href="coleta.html">Pontos de coleta</a>
                    <a href="index.html#videos">Vídeos</a>
                    <a href="index.html#contato">Contato</a>
