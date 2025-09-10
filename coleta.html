@@ -31,12 +31,26 @@
       .imagem-botao-section {
           text-align: center;
           margin: 40px 0;
+          position: relative;
+          display: inline-block;
       }
 
       .imagem-botao-section img {
           max-width: 80%;
           height: auto;
           border-radius: 10px;
+      }
+
+      /* Texto sobre a imagem */
+      .texto-sobre-imagem {
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: white;
+          font-size: 24px;
+          font-weight: bold;
+          text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
       }
    </style>
 </head>
@@ -94,6 +108,7 @@
 
        <!-- Nova seção: imagem com botão -->
        <section class="imagem-botao-section">
+           <div class="texto-sobre-imagem">Conheça mais sobre os pontos de coleta em Cianorte</div>
            <img src="img/banner-site_(340).jpg" alt="Imagem Descritiva">
            <br><br>
            <a href="https://cianorte.my.canva.site/coleta-de-lixo" target="_blank" class="botao-link">Saiba Mais</a>
