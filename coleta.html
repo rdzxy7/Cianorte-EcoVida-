@@ -10,6 +10,34 @@
       html {
         scroll-behavior: smooth;
       }
+
+      /* Estilo do botão da nova seção */
+      .botao-link {
+          display: inline-block;
+          padding: 12px 25px;
+          background-color: #4CAF50; /* verde */
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          border-radius: 8px;
+          transition: background-color 0.3s ease;
+      }
+
+      .botao-link:hover {
+          background-color: #45a049;
+      }
+
+      /* Centralizando imagem e botão */
+      .imagem-botao-section {
+          text-align: center;
+          margin: 40px 0;
+      }
+
+      .imagem-botao-section img {
+          max-width: 80%;
+          height: auto;
+          border-radius: 10px;
+      }
    </style>
 </head>
 <body>
@@ -62,6 +90,13 @@
                </p>
                <a href="#lista-coleta" class="hero-btn">Ver Locais →</a>
            </div>
+       </section>
+
+       <!-- Nova seção: imagem com botão -->
+       <section class="imagem-botao-section">
+           <img src="img/sua-imagem.png" alt="Imagem Descritiva">
+           <br><br>
+           <a href="https://www.exemplo.com" target="_blank" class="botao-link">Saiba Mais</a>
        </section>
 
        <!-- Seção Lista de Coleta -->
