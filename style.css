@@ -228,28 +228,30 @@ header {
 /* RESPONSIVIDADE PARA CELULAR */
 /* ========================= */
 @media (max-width: 768px) {
-    /* Menu vira coluna */
+    /* Container e menu continuam em linha */
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     .menu nav {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .menu nav a {
-        margin: 8px 0;
-        font-size: 16px;
+        margin: 5px;
+        font-size: 14px;
     }
 
     .login {
-        margin-top: 10px;
-        width: 100%;
+        margin-top: 5px;
         text-align: right;
+        width: auto;
     }
 
     /* Texto rolante menor */
@@ -296,7 +298,7 @@ header {
     }
 
     .menu nav a {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
@@ -734,4 +736,3 @@ html {
    70% { box-shadow: 0 0 0 10px rgba(241,196,15,0); }
    100% { box-shadow: 0 0 0 0 rgba(241,196,15,0); }
 } 
-
