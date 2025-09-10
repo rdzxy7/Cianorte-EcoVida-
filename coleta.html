@@ -6,7 +6,10 @@
    <title>Pontos de Coleta - Cianorte EcoVida</title>
    <link rel="stylesheet" href="style.css">
    <style>
-      html { scroll-behavior: smooth; }
+      /* Rolagem suave */
+      html {
+        scroll-behavior: smooth;
+      }
    </style>
 </head>
 <body>
@@ -41,21 +44,34 @@
        </div>
    </div>
 
-   <!-- Seção principal -->
+   <!-- Seção principal (HERO BANNER) -->
    <main>
-       <section class="hero-section">
+       <section id="inicio" class="hero-section">
            <div class="hero-content">
-               <h1>Pontos de Coleta de Lixo Eletrônico</h1>
-               <p>Aqui você encontra informações sobre os pontos de coleta de lixo eletrônico em sua cidade.</p>
-
-               <!-- Banner Animado -->
-               <section class="banner-animado">
-                   <div class="banner-texto">
-                       <h2>Participe da Reciclagem!</h2>
-                       <p>Descubra os locais próximos e ajude o planeta!</p>
-                   </div>
-               </section>
+               <div class="hero-icon">
+                   <img src="img/coleta-icon.png" alt="Coleta" width="150" class="logo animada">
+               </div>
+               <h1>
+                   Encontre <span class="green">Pontos de Coleta</span>
+                   e ajude em um <span class="blue">Futuro Sustentável</span>
+               </h1>
+               <p>
+                   Aqui você encontra informações sobre os pontos de coleta de lixo eletrônico 
+                   em sua cidade. Leve celulares, computadores, pilhas, baterias e outros 
+                   equipamentos eletrônicos para locais autorizados e contribua com a reciclagem.
+               </p>
+               <a href="#lista-coleta" class="hero-btn">Ver Locais →</a>
            </div>
+       </section>
+
+       <!-- Seção Lista de Coleta -->
+       <section id="lista-coleta" class="lista-section">
+           <h2>Pontos de Coleta em Cianorte</h2>
+           <ul>
+               <li>📍 Prefeitura de Cianorte – Rua XV de Novembro, 123</li>
+               <li>📍 Associação ReciclaMais – Av. Goiás, 456</li>
+               <li>📍 Escola Municipal Verde Vida – Rua das Flores, 789</li>
+           </ul>
        </section>
 
        <div id="welcomeMessage" class="welcome"></div>
@@ -109,60 +125,5 @@
    </div>
 
    <script src="script.js"></script>
-
-   <style>
-       /* Banner Animado */
-       .banner-animado {
-           width: 100%;
-           height: 200px;
-           background: url('img/banner-coleta.jpg') no-repeat center center/cover;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           position: relative;
-           overflow: hidden;
-           margin-top: 20px;
-       }
-
-       .banner-animado::before {
-           content: "";
-           position: absolute;
-           width: 100%;
-           height: 100%;
-           background: rgba(0,0,0,0.4);
-           z-index: 1;
-       }
-
-       .banner-texto {
-           position: relative;
-           color: white;
-           text-align: center;
-           z-index: 2;
-           animation: slideIn 2s ease-out forwards;
-       }
-
-       .banner-texto h2 {
-           font-size: 2rem;
-           margin-bottom: 10px;
-           opacity: 0;
-           animation: fadeIn 2s forwards 0.5s;
-       }
-
-       .banner-texto p {
-           font-size: 1rem;
-           opacity: 0;
-           animation: fadeIn 2s forwards 1s;
-       }
-
-       @keyframes slideIn {
-           0% { transform: translateY(-50px); opacity: 0; }
-           100% { transform: translateY(0); opacity: 1; }
-       }
-
-       @keyframes fadeIn {
-           0% { opacity: 0; transform: translateY(20px); }
-           100% { opacity: 1; transform: translateY(0); }
-       }
-   </style>
 </body>
 </html>
