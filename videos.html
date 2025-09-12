@@ -56,14 +56,21 @@
         animation: rolar 20s linear infinite;
       }
 
+      /* BOTÃO atualizado para ficar igual ao outro */
       .rolante a.botao {
-        background: #00CE76;
-        color: #00CE76;
-        padding: 5px 12px;
-        margin-left: 10px;
-        border-radius: 6px;
-        font-weight: bold;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50; /* cor do botão da outra página */
+        color: white;
         text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        margin-left: 10px;
+      }
+
+      .rolante a.botao:hover {
+        background-color: #45a049; /* cor ao passar o mouse */
       }
 
       @keyframes rolar {
@@ -171,4 +178,3 @@
    </main>
 </body>
 </html>
->
