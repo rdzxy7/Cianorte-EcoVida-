@@ -4,44 +4,203 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>O que é - Cianorte EcoVida</title>
-   <link rel="stylesheet" href="style.css">
    <style>
+       /* Fundo linear contínuo para toda a página */
+       body {
+           margin: 0;
+           font-family: Arial, sans-serif;
+           background: linear-gradient(270deg, #00CE76, #0077ff);
+           min-height: 100vh;
+           color: white;
+       }
+
        /* CABEÇALHO */
-      header .container {
-    display: flex;
-    align-items: center; /* centraliza verticalmente */
-    padding: 10px 50px; /* espaçamento maior nas laterais */
-    justify-content: flex-start; /* logo à esquerda */
-    position: relative;
-}
+       header {
+           background-color: #00CE76; /* verde */
+           padding: 10px 50px;
+           width: 100%;
+           box-sizing: border-box;
+       }
 
-header .logo {
-    flex: 0 0 auto;
-}
+       header .container {
+           display: flex;
+           align-items: center;
+           justify-content: flex-start;
+           position: relative;
+       }
 
-header .logo img {
-    height: 60px;
-}
+       header .logo img {
+           height: 60px;
+       }
 
-/* Menu centralizado na tela, mantendo a logo à esquerda */
-header nav {
-    position: absolute;
-    left: 50%; /* posição horizontal central */
-    transform: translateX(-50%); /* centraliza completamente */
-    display: flex;
-    gap: 20px;
-}
+       header nav {
+           position: absolute;
+           left: 50%;
+           transform: translateX(-50%);
+           display: flex;
+           gap: 0;
+       }
 
-header nav a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
+       header nav a {
+           color: white;
+           text-decoration: none;
+           font-weight: bold;
+           font-size: 14px;
+           letter-spacing: 1px;
+           margin: 0 15px;
+       }
 
-header nav a.ativo {
-    text-decoration: underline;
-}
+       header nav a.ativo {
+           text-decoration: none; /* remove underline na palavra "O que é" */
+       }
 
+       /* Texto rolante */
+       .rolante-container {
+           width: 100%;
+           overflow: hidden;
+           white-space: nowrap;
+           padding: 5px 0;
+           background-color: #00A86B; /* fundo verde */
+       }
+
+       .rolante p {
+           display: inline-block;
+           padding-left: 100%;
+           color: white;
+           font-weight: bold;
+           font-size: 14px;
+           animation: rolar 20s linear infinite;
+       }
+
+       @keyframes rolar {
+           0% { transform: translateX(100%); }
+           100% { transform: translateX(-100%); }
+       }
+
+       .rolante a.botao {
+           display: inline-block;
+           background-color: #008000; /* botão verde escuro */
+           color: white;
+           padding: 5px 10px;
+           border-radius: 5px;
+           text-decoration: none;
+           font-weight: bold;
+           margin-left: 10px;
+       }
+
+       .rolante a.botao:hover {
+           background-color: #00CE76;
+       }
+
+       /* Seções */
+       section {
+           padding: 50px 20px;
+           text-align: center;
+       }
+
+       section h2 {
+           font-size: 2rem;
+           margin-bottom: 20px;
+           color: white;
+           text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+       }
+
+       section p {
+           font-size: 1rem;
+           color: white;
+           margin-bottom: 40px;
+           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+       }
+
+       /* Cards */
+       .cards {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+           gap: 25px;
+           justify-items: center;
+           max-width: 1200px;
+           margin: 0 auto;
+       }
+
+       .card {
+           text-align: center;
+           padding: 15px;
+           transition: transform 0.3s;
+           width: 100%;
+           max-width: 260px;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           background: transparent;
+           box-shadow: none;
+       }
+
+       .card:hover {
+           transform: translateY(-5px);
+       }
+
+       .card img {
+           width: 100%;
+           max-height: 180px;
+           object-fit: cover;
+           border-radius: 12px;
+           margin-bottom: 12px;
+           cursor: pointer;
+       }
+
+       .card h3, .card p {
+           color: white;
+           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+       }
+
+       .card h3 {
+           margin: 10px 0 6px;
+           font-size: 1.2rem;
+       }
+
+       .card p {
+           font-size: 0.95rem;
+       }
+
+       /* Rodapé rolante */
+       footer {
+           background-color: #00A86B; /* verde */
+           color: white;
+           padding: 8px 0;
+           overflow: hidden;
+           white-space: nowrap;
+       }
+
+       footer div {
+           display: inline-block;
+           padding-left: 100%;
+           animation: rolarFooter 20s linear infinite;
+       }
+
+       @keyframes rolarFooter {
+           0% { transform: translateX(100%); }
+           100% { transform: translateX(-100%); }
+       }
+
+       /* Responsividade */
+       @media (max-width: 1024px) {
+           .cards {
+               grid-template-columns: repeat(2, 1fr);
+           }
+       }
+
+       @media (max-width: 768px) {
+           .cards {
+               grid-template-columns: 1fr;
+               gap: 20px;
+           }
+       }
+
+       @media (max-width: 480px) {
+           .rolante p, footer div {
+               font-size: 14px;
+           }
+       }
    </style>
 </head>
 <body>
@@ -51,73 +210,107 @@ header nav a.ativo {
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
-           <div class="menu">
-               <nav>
-                   <a href="index.html">Início</a>
-                   <a href="oque.html" class="ativo">O que é</a>
-                   <a href="coleta.html">Pontos de coleta</a>
-                   <a href="index.html#videos">Vídeos</a>
-                   <a href="index.html#contato">Contato</a>
-               </nav>
-           </div>
+           <nav>
+               <a href="index.html">Início</a>
+               <a href="oque.html" class="ativo">O que é</a>
+               <a href="coleta.html">Pontos de coleta</a>
+               <a href="index.html#videos">Vídeos</a>
+               <a href="index.html#contato">Contato</a>
+           </nav>
        </div>
    </header>
 
-    <!-- Texto rolante -->
-<div class="rolante-container">
-  <div class="rolante">
-    <p>
-      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-      <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-    </p>
-  </div>
-</div>
+   <!-- Texto rolante -->
+   <div class="rolante-container">
+       <div class="rolante">
+           <p>
+               Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+               <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+           </p>
+       </div>
+   </div>
 
    <!-- Conteúdo da página O que é -->
    <main>
        <section id="oque">
-         <div class="section-container">
            <h2>O que é Lixo Eletrônico?</h2>
-           <p>
-             Também conhecido como e-lixo, são equipamentos eletrônicos descartados
-             que contêm materiais valiosos e substâncias perigosas.
-           </p>
-
+           <p>Também conhecido como e-lixo, são equipamentos eletrônicos descartados que contêm materiais valiosos e substâncias perigosas.</p>
            <div class="cards">
-             <div class="card">
-               <a href="#smartphones">
-                 <img src="img/celular.webp" alt="Smartphones">
-               </a>
-               <h3>Smartphones</h3>
-               <p>Celulares, tablets e acessórios móveis</p>
-             </div>
-
-             <div class="card">
-               <a href="#computadores">
-                 <img src="img/computadores.jpg" alt="Computadores">
-               </a>
-               <h3>Computadores</h3>
-               <p>PCs, laptops, monitores e periféricos</p>
-             </div>
-
-             <div class="card">
-               <a href="#componentes">
-                 <img src="img/componentes.jpg" alt="Componentes">
-               </a>
-               <h3>Componentes</h3>
-               <p>Placas, processadores e memórias</p>
-             </div>
-
-             <div class="card">
-               <a href="#eletrodomesticos">
-                 <img src="img/Eletrodomesticos.png" alt="Eletrodomésticos">
-               </a>
-               <h3>Eletrodomésticos</h3>
-               <p>TVs, micro-ondas e outros aparelhos</p>
-             </div>
+               <div class="card">
+                   <img src="img/celular.webp" alt="Smartphones">
+                   <h3>Smartphones</h3>
+                   <p>Celulares, tablets e acessórios móveis</p>
+               </div>
+               <div class="card">
+                   <img src="img/computadores.jpg" alt="Computadores">
+                   <h3>Computadores</h3>
+                   <p>PCs, laptops, monitores e periféricos</p>
+               </div>
+               <div class="card">
+                   <img src="img/componentes.jpg" alt="Componentes">
+                   <h3>Componentes</h3>
+                   <p>Placas, processadores e memórias</p>
+               </div>
+               <div class="card">
+                   <img src="img/Eletrodomesticos.png" alt="Eletrodomésticos">
+                   <h3>Eletrodomésticos</h3>
+                   <p>TVs, micro-ondas e outros aparelhos</p>
+               </div>
            </div>
-         </div>
+       </section>
+
+       <!-- Seção Por que reciclar -->
+       <section id="porque">
+           <h2>Por que reciclar?</h2>
+           <p>A reciclagem de lixo eletrônico ajuda a preservar recursos naturais, reduz a poluição e evita que substâncias tóxicas contaminem o solo e a água.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/planeta.png" alt="Preservar o meio ambiente">
+                   <h3>Preservar o meio ambiente</h3>
+                   <p>Reduz o impacto ambiental e protege a natureza.</p>
+               </div>
+               <div class="card">
+                   <img src="img/reciclagem.png" alt="Economia de recursos">
+                   <h3>Economia de recursos</h3>
+                   <p>Recupera metais e materiais valiosos para reutilização.</p>
+               </div>
+               <div class="card">
+                   <img src="img/saude.png" alt="Saúde pública">
+                   <h3>Saúde pública</h3>
+                   <p>Evita contaminação por substâncias tóxicas presentes no e-lixo.</p>
+               </div>
+           </div>
+       </section>
+
+       <!-- Seção Como funciona -->
+       <section id="comofunciona">
+           <h2>Como funciona?</h2>
+           <p>A coleta e o processamento do lixo eletrônico seguem etapas seguras, garantindo que os materiais sejam reciclados corretamente e sem riscos.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/coleta.png" alt="Coleta">
+                   <h3>Coleta</h3>
+                   <p>Leve seus eletrônicos descartados aos pontos de coleta.</p>
+               </div>
+               <div class="card">
+                   <img src="img/triagem.png" alt="Triagem">
+                   <h3>Triagem</h3>
+                   <p>Os itens são separados por tipo de material.</p>
+               </div>
+               <div class="card">
+                   <img src="img/reciclagem2.png" alt="Reciclagem">
+                   <h3>Reciclagem</h3>
+                   <p>Metais e componentes são reaproveitados para novos produtos.</p>
+               </div>
+           </div>
        </section>
    </main>
+
+   <!-- Rodapé rolante -->
+   <footer>
+       <div>
+           © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental.
+       </div>
+   </footer>
 </body>
 </html>
