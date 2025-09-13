@@ -85,7 +85,7 @@
       .rolante {
           display: inline-block;
           padding-left: 100%;
-          animation: rolar 15s linear infinite;
+          animation: rolar 20s linear infinite;
       }
 
       .rolante p {
@@ -93,9 +93,27 @@
           font-size: 1.1em;
       }
 
+      /* Botão dentro do rolante */
+      .rolante a.botao-link {
+          display: inline-block;
+          padding: 8px 20px;
+          margin: 0 15px;
+          background-color: #28a745; /* verde */
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          border-radius: 6px;
+          transition: background-color 0.3s ease;
+          vertical-align: middle;
+      }
+
+      .rolante a.botao-link:hover {
+          background-color: #218838;
+      }
+
       @keyframes rolar {
           from { transform: translateX(0); }
-          to { transform: translateX(-100%); }
+          to { transform: translateX(-50%); }
       }
 
       /* Seções */
@@ -106,22 +124,36 @@
           text-align: center;
       }
 
-      .section img {
-          width: 100%;
-          max-width: 600px;
+      .section h2 {
+          font-size: 24px;
+          margin-bottom: 25px;
+      }
+
+      /* Fotos com legenda */
+      .foto-legenda {
+          text-align: center;
+          margin: 15px;
+      }
+
+      .foto-legenda img {
+          width: 250px;
           border-radius: 12px;
-          margin-top: 15px;
           box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       }
 
-      .section h2 {
-          font-size: 24px;
-          margin-bottom: 15px;
+      .foto-legenda p {
+          margin-top: 10px;
+          font-size: 16px;
+          line-height: 1.4;
+          color: white;
       }
 
-      .section p {
-          font-size: 18px;
-          line-height: 1.6;
+      /* Seção Diretora com fotos lado a lado */
+      .diretora-container {
+          display: flex;
+          justify-content: center; /* centraliza as fotos */
+          gap: 40px; /* espaço entre as fotos */
+          flex-wrap: nowrap; /* garante que as fotos não fiquem uma embaixo da outra */
       }
 
       /* Google Maps */
@@ -134,7 +166,7 @@
           margin-top: 20px;
       }
 
-      /* Botões */
+      /* Botões gerais */
       .botao-link {
           display: inline-block;
           padding: 12px 25px;
@@ -149,6 +181,33 @@
 
       .botao-link:hover {
           background-color: #45a049;
+      }
+
+      /* Rodapé rolante */
+      footer {
+          position: relative;
+          background-color: #00CE76;
+          overflow: hidden;
+          white-space: nowrap;
+          padding: 10px 0;
+      }
+
+      .footer-rolante-container {
+          width: 100%;
+          overflow: hidden;
+      }
+
+      .footer-rolante {
+          display: inline-block;
+          padding-left: 100%;
+          animation: rolar-footer 15s linear infinite; /* mais rápido */
+          color: white;
+          font-weight: bold;
+      }
+
+      @keyframes rolar-footer {
+          from { transform: translateX(0); }
+          to { transform: translateX(-100%); }
       }
    </style>
 </head>
@@ -169,40 +228,66 @@
 
    <!-- Texto rolante -->
    <div class="rolante-container">
-     <div class="rolante">
-       <p>
-         Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-         <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-       </p>
-     </div>
+       <div class="rolante">
+           <p>
+               🌱 Reduza o lixo eletrônico! Proteja o meio ambiente! Doe seus aparelhos!  
+               <a href="sua-pagina.html" class="botao-link">Clique aqui!</a>
+               🌱 Reduza o lixo eletrônico! Proteja o meio ambiente! Doe seus aparelhos!  
+               <a href="sua-pagina.html" class="botao-link">Clique aqui!</a>
+           </p>
+       </div>
    </div>
+
    <main>
        <!-- Seção: Sobre a Escola -->
        <section class="section">
            <h2>Sobre a Escola</h2>
-           <p>Nossa escola é referência em educação ambiental, promovendo sustentabilidade e consciência ecológica desde cedo.</p>
-           <img src="img/escola.jpg" alt="Foto da Escola">
+           <div class="foto-legenda">
+               <img src="img/escola.jpg" alt="Foto da Escola">
+               <p>Nossa escola é referência em educação ambiental, promovendo sustentabilidade e consciência ecológica desde cedo.</p>
+           </div>
        </section>
 
        <!-- Seção: Diretora -->
        <section class="section">
            <h2>Diretora</h2>
-           <p>A diretora lidera com dedicação projetos que incentivam alunos e comunidade a cuidar do meio ambiente.</p>
-           <img src="img/diretora.jpg" alt="Foto da Diretora">
+           <div class="diretora-container">
+               <div class="foto-legenda">
+                   <img src="img/diretora1.jpg" alt="Foto da Diretora">
+                   <p>A diretora lidera com dedicação projetos que incentivam alunos e comunidade a cuidar do meio ambiente.</p>
+               </div>
+               <div class="foto-legenda">
+                   <img src="img/diretora2.jpg" alt="Segunda Foto da Diretora">
+                   <p>A diretora também participa de eventos e iniciativas de sustentabilidade na escola.</p>
+               </div>
+           </div>
        </section>
 
        <!-- Seção: Professor -->
        <section class="section">
            <h2>Professor Responsável</h2>
-           <p>O professor orienta os alunos em projetos de reciclagem e conscientização ambiental.</p>
-           <img src="img/professor.jpg" alt="Foto do Professor">
+           <div class="foto-legenda">
+               <img src="img/professor.jpg" alt="Foto do Professor">
+               <p>O professor Arthur Barradas Silveira orienta os alunos em projetos de reciclagem e conscientização ambiental, incentivando práticas sustentáveis e o engajamento da comunidade escolar na preservação do meio ambiente.</p>
+           </div>
+       </section>
+
+       <!-- Seção: Pedagoga -->
+       <section class="section">
+           <h2>Pedagoga</h2>
+           <div class="foto-legenda">
+               <img src="img/pedagoga.jpg" alt="Foto da Pedagoga">
+               <p>A pedagoga acompanha o desenvolvimento educacional dos alunos, promovendo atividades que integram aprendizado e conscientização ambiental.</p>
+           </div>
        </section>
 
        <!-- Seção: Turma -->
        <section class="section">
            <h2>Nossa Turma</h2>
-           <p>Os alunos participam ativamente do projeto, aprendendo na prática como cuidar do meio ambiente.</p>
-           <img src="img/turma.jpg" alt="Foto da Turma">
+           <div class="foto-legenda">
+               <img src="img/turma.jpg" alt="Foto da Turma">
+               <p>Os estudantes do 2° ano “B” do Colégio Estadual Professor Caio Mário Moreira elaboraram uma cartilha de conscientização com o propósito de sensibilizar e engajar toda a comunidade escolar — e também a sociedade em geral — a respeito dos desafios relacionados ao gerenciamento de resíduos sólidos, em especial o lixo eletrônico, bem como à importância do consumo consciente dos recursos naturais.</p>
+           </div>
        </section>
 
        <!-- Seção: Localização -->
@@ -214,5 +299,15 @@
            </iframe>
        </section>
    </main>
+
+   <!-- Rodapé rolante -->
+   <footer>
+     <div class="footer-rolante-container">
+       <div class="footer-rolante">
+         © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
+         © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
+       </div>
+     </div>
+   </footer>
 </body>
 </html>
