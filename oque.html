@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>O que é - Cianorte EcoVida</title>
    <style>
+       /* Fundo linear contínuo para toda a página */
        body {
            margin: 0;
            font-family: Arial, sans-serif;
@@ -13,11 +14,11 @@
            color: white;
        }
 
-       html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
 
-       /* ----------------- CABEÇALHO ----------------- */
+       /* CABEÇALHO */
        header {
-           background-color: #00CE76;
+           background-color: #00CE76; /* verde */
            padding: 10px 20px;
            width: 100%;
            box-sizing: border-box;
@@ -27,33 +28,30 @@
        header .container {
            display: flex;
            align-items: center;
-           justify-content: center; /* centraliza nav */
-           position: relative;
-       }
-
-       /* Logo fixa à esquerda */
-       header .logo {
-           position: absolute;
-           left: 20px;
+            justify-content: space-between;
        }
 
        header .logo img {
            height: 60px;
        }
 
-       nav {
+        nav {
            display: flex;
-           gap: 15px;
+           gap: 0;
        }
 
-       nav a {
+       header nav a {
            color: white;
            text-decoration: none;
            font-weight: bold;
            font-size: 14px;
+           letter-spacing: 1px;
+           margin: 0 15px;
        }
 
-       nav a.ativo { text-decoration: underline; }
+       header nav a.ativo {
+           text-decoration: none; /* remove underline na palavra "O que é" */
+       }
 
        /* Hamburger */
        .hamburger {
@@ -85,19 +83,18 @@
        .menu-mobile a {
            padding: 8px 0;
            border-bottom: 1px solid #008f57;
-           color: white; /* muda o texto para branco */
-           text-decoration: none;
        }
 
        .menu-mobile a:last-child { border-bottom: none; }
 
-       /* ----------------- TEXTO ROLANTE ----------------- */
+
+       /* Texto rolante */
        .rolante-container {
            width: 100%;
            overflow: hidden;
            white-space: nowrap;
            padding: 5px 0;
-           background-color: #00A86B;
+           background-color: #00A86B; /* fundo verde */
        }
 
        .rolante p {
@@ -115,18 +112,21 @@
        }
 
        .rolante a.botao {
-           background-color: #008000;
+           display: inline-block;
+           background-color: #008000; /* botão verde escuro */
            color: white;
            padding: 5px 10px;
            border-radius: 5px;
+           text-decoration: none;
            font-weight: bold;
            margin-left: 10px;
-           text-decoration: none;
        }
 
-       .rolante a.botao:hover { background-color: #00CE76; }
+       .rolante a.botao:hover {
+           background-color: #00CE76;
+       }
 
-       /* ----------------- SEÇÕES ----------------- */
+       /* Seções */
        section {
            padding: 50px 20px;
            text-align: center;
@@ -169,7 +169,9 @@
            box-shadow: none;
        }
 
-       .card:hover { transform: translateY(-5px); }
+       .card:hover {
+           transform: translateY(-5px);
+       }
 
        .card img {
            width: 100%;
@@ -190,9 +192,11 @@
            font-size: 1.2rem;
        }
 
-       .card p { font-size: 0.95rem; }
+       .card p {
+           font-size: 0.95rem;
+       }
 
-       /* ----------------- RODAPÉ ----------------- */
+        /* ----------------- RODAPÉ ----------------- */
        footer {
            background-color: #00A86B;
            overflow: hidden;
@@ -218,7 +222,32 @@
            to { transform: translateX(-100%); }
        }
 
-       /* ----------------- RESPONSIVIDADE ----------------- */
+
+       /* Responsividade */
+       @media (max-width: 1024px) {
+           .cards {
+               grid-template-columns: repeat(2, 1fr);
+           }
+       }
+
+       /* ======================== */
+       /* MOBILE: CARDS LADO A LADO */
+       /* ======================== */
+       @media (max-width: 768px) {
+           .cards {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+               gap: 15px;
+           }
+
+           .cards .card {
+               flex: 1 1 calc(50% - 15px); /* duas por linha */
+               max-width: calc(50% - 15px);
+           }
+       }
+
+     /* ----------------- RESPONSIVIDADE ----------------- */
        @media (max-width: 768px) {
            nav { display: none; }
            .hamburger { display: flex; }
@@ -350,11 +379,8 @@
 
    <!-- Rodapé rolante -->
    <footer>
-       <div class="footer-rolante-container">
-           <div class="footer-rolante">
-               © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
-               © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
-           </div>
+       <div>
+           © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental.
        </div>
    </footer>
 
