@@ -5,20 +5,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>O que é - Cianorte EcoVida</title>
    <style>
-       /* ----------------- RESET ----------------- */
        body {
            margin: 0;
            font-family: Arial, sans-serif;
            background: linear-gradient(270deg, #00CE76, #0077ff);
-           background-size: 400% 400%;
-           animation: gradientAnim 10s ease infinite;
+           min-height: 100vh;
            color: white;
-       }
-
-       @keyframes gradientAnim {
-           0% { background-position: 0% 50%; }
-           50% { background-position: 100% 50%; }
-           100% { background-position: 0% 50%; }
        }
 
        html { scroll-behavior: smooth; }
@@ -42,13 +34,14 @@
            height: 60px;
        }
 
-       /* Menu desktop */
        nav {
            display: flex;
            gap: 15px;
        }
 
        nav a {
+           color: white;
+           text-decoration: none;
            font-weight: bold;
            font-size: 14px;
        }
@@ -119,6 +112,7 @@
            border-radius: 5px;
            font-weight: bold;
            margin-left: 10px;
+           text-decoration: none;
        }
 
        .rolante a.botao:hover { background-color: #00CE76; }
@@ -143,32 +137,51 @@
            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
        }
 
-       /* Fotos com legenda */
-       .foto-legenda {
-           text-align: center;
-           margin: 15px;
-       }
-
-       .foto-legenda img {
-           width: 250px;
-           border-radius: 12px;
-           box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-       }
-
-       .foto-legenda p {
-           margin-top: 10px;
-           font-size: 16px;
-           line-height: 1.4;
-           color: white;
-       }
-
-       /* Container de cards lado a lado no desktop */
+       /* Cards */
        .cards {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: center;
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
            gap: 25px;
+           justify-items: center;
+           max-width: 1200px;
+           margin: 0 auto;
        }
+
+       .card {
+           text-align: center;
+           padding: 15px;
+           transition: transform 0.3s;
+           width: 100%;
+           max-width: 260px;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           background: transparent;
+           box-shadow: none;
+       }
+
+       .card:hover { transform: translateY(-5px); }
+
+       .card img {
+           width: 100%;
+           max-height: 180px;
+           object-fit: cover;
+           border-radius: 12px;
+           margin-bottom: 12px;
+           cursor: pointer;
+       }
+
+       .card h3, .card p {
+           color: white;
+           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+       }
+
+       .card h3 {
+           margin: 10px 0 6px;
+           font-size: 1.2rem;
+       }
+
+       .card p { font-size: 0.95rem; }
 
        /* ----------------- RODAPÉ ----------------- */
        footer {
@@ -202,11 +215,7 @@
            .hamburger { display: flex; }
 
            .cards {
-               flex-direction: column;
-           }
-
-           .cards .foto-legenda {
-               margin-bottom: 20px;
+               grid-template-columns: 1fr;
            }
        }
 
@@ -256,30 +265,82 @@
    </div>
 
    <main>
+       <!-- Seção O que é -->
        <section id="oque">
            <h2>O que é Lixo Eletrônico?</h2>
            <p>Também conhecido como e-lixo, são equipamentos eletrônicos descartados que contêm materiais valiosos e substâncias perigosas.</p>
            <div class="cards">
-               <div class="foto-legenda">
+               <div class="card">
                    <img src="img/celular.webp" alt="Smartphones">
-                   <p>Smartphones, tablets e acessórios móveis</p>
+                   <h3>Smartphones</h3>
+                   <p>Celulares, tablets e acessórios móveis</p>
                </div>
-               <div class="foto-legenda">
+               <div class="card">
                    <img src="img/computadores.jpg" alt="Computadores">
+                   <h3>Computadores</h3>
                    <p>PCs, laptops, monitores e periféricos</p>
                </div>
-               <div class="foto-legenda">
+               <div class="card">
                    <img src="img/componentes.jpg" alt="Componentes">
+                   <h3>Componentes</h3>
                    <p>Placas, processadores e memórias</p>
                </div>
-               <div class="foto-legenda">
+               <div class="card">
                    <img src="img/Eletrodomesticos.png" alt="Eletrodomésticos">
+                   <h3>Eletrodomésticos</h3>
                    <p>TVs, micro-ondas e outros aparelhos</p>
+               </div>
+           </div>
+       </section>
+
+        <!-- Seção Por que reciclar -->
+       <section id="porque">
+           <h2>Por que reciclar?</h2>
+           <p>A reciclagem de lixo eletrônico ajuda a preservar recursos naturais, reduz a poluição e evita que substâncias tóxicas contaminem o solo e a água.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/planeta.png" alt="Preservar o meio ambiente">
+                   <h3>Preservar o meio ambiente</h3>
+                   <p>Reduz o impacto ambiental e protege a natureza.</p>
+               </div>
+               <div class="card">
+                   <img src="img/reciclagem.png" alt="Economia de recursos">
+                   <h3>Economia de recursos</h3>
+                   <p>Recupera metais e materiais valiosos para reutilização.</p>
+               </div>
+               <div class="card">
+                   <img src="img/saude.png" alt="Saúde pública">
+                   <h3>Saúde pública</h3>
+                   <p>Evita contaminação por substâncias tóxicas presentes no e-lixo.</p>
+               </div>
+           </div>
+       </section>
+
+       <!-- Seção Como funciona -->
+       <section id="comofunciona">
+           <h2>Como funciona?</h2>
+           <p>A coleta e o processamento do lixo eletrônico seguem etapas seguras, garantindo que os materiais sejam reciclados corretamente e sem riscos.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/coleta.png" alt="Coleta">
+                   <h3>Coleta</h3>
+                   <p>Leve seus eletrônicos descartados aos pontos de coleta.</p>
+               </div>
+               <div class="card">
+                   <img src="img/triagem.png" alt="Triagem">
+                   <h3>Triagem</h3>
+                   <p>Os itens são separados por tipo de material.</p>
+               </div>
+               <div class="card">
+                   <img src="img/reciclagem2.png" alt="Reciclagem">
+                   <h3>Reciclagem</h3>
+                   <p>Metais e componentes são reaproveitados para novos produtos.</p>
                </div>
            </div>
        </section>
    </main>
 
+   <!-- Rodapé rolante -->
    <footer>
      <div class="footer-rolante-container">
        <div class="footer-rolante">
