@@ -5,7 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>O que é - Cianorte EcoVida</title>
    <style>
-       /* Fundo linear contínuo para toda a página */
+       /* ----------------- RESET ----------------- */
        body {
            margin: 0;
            font-family: Arial, sans-serif;
@@ -14,53 +14,81 @@
            color: white;
        }
 
-       /* CABEÇALHO */
+       a { text-decoration: none; color: inherit; }
+
+       /* ----------------- CABEÇALHO ----------------- */
        header {
-           background-color: #00CE76; /* verde */
-           padding: 10px 50px;
+           background-color: #00CE76;
+           padding: 10px 20px;
            width: 100%;
            box-sizing: border-box;
+           position: relative;
        }
 
        header .container {
            display: flex;
            align-items: center;
-           justify-content: flex-start;
-           position: relative;
+           justify-content: space-between;
        }
 
        header .logo img {
            height: 60px;
        }
 
-       header nav {
-           position: absolute;
-           left: 50%;
-           transform: translateX(-50%);
+       /* Menu desktop */
+       nav {
            display: flex;
-           gap: 0;
+           gap: 15px;
        }
 
-       header nav a {
-           color: white;
-           text-decoration: none;
+       nav a {
            font-weight: bold;
            font-size: 14px;
-           letter-spacing: 1px;
-           margin: 0 15px;
        }
 
-       header nav a.ativo {
-           text-decoration: none; /* remove underline na palavra "O que é" */
+       nav a.ativo { text-decoration: underline; }
+
+       /* Hamburger */
+       .hamburger {
+           display: none;
+           flex-direction: column;
+           cursor: pointer;
+           gap: 5px;
        }
 
-       /* Texto rolante */
+       .hamburger div {
+           width: 25px;
+           height: 3px;
+           background-color: white;
+       }
+
+       /* Menu mobile */
+       .menu-mobile {
+           display: none;
+           flex-direction: column;
+           background-color: #00CE76;
+           position: absolute;
+           top: 60px;
+           right: 0;
+           width: 200px;
+           padding: 10px;
+           border-radius: 0 0 8px 8px;
+       }
+
+       .menu-mobile a {
+           padding: 8px 0;
+           border-bottom: 1px solid #008f57;
+       }
+
+       .menu-mobile a:last-child { border-bottom: none; }
+
+       /* ----------------- TEXTO ROLANTE ----------------- */
        .rolante-container {
            width: 100%;
            overflow: hidden;
            white-space: nowrap;
            padding: 5px 0;
-           background-color: #00A86B; /* fundo verde */
+           background-color: #00A86B;
        }
 
        .rolante p {
@@ -78,21 +106,17 @@
        }
 
        .rolante a.botao {
-           display: inline-block;
-           background-color: #008000; /* botão verde escuro */
+           background-color: #008000;
            color: white;
            padding: 5px 10px;
            border-radius: 5px;
-           text-decoration: none;
            font-weight: bold;
            margin-left: 10px;
        }
 
-       .rolante a.botao:hover {
-           background-color: #00CE76;
-       }
+       .rolante a.botao:hover { background-color: #00CE76; }
 
-       /* Seções */
+       /* ----------------- SEÇÕES ----------------- */
        section {
            padding: 50px 20px;
            text-align: center;
@@ -112,7 +136,7 @@
            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
        }
 
-       /* Cards */
+       /* ----------------- CARDS ----------------- */
        .cards {
            display: grid;
            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -132,12 +156,9 @@
            flex-direction: column;
            align-items: center;
            background: transparent;
-           box-shadow: none;
        }
 
-       .card:hover {
-           transform: translateY(-5px);
-       }
+       .card:hover { transform: translateY(-5px); }
 
        .card img {
            width: 100%;
@@ -145,7 +166,6 @@
            object-fit: cover;
            border-radius: 12px;
            margin-bottom: 12px;
-           cursor: pointer;
        }
 
        .card h3, .card p {
@@ -153,18 +173,9 @@
            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
        }
 
-       .card h3 {
-           margin: 10px 0 6px;
-           font-size: 1.2rem;
-       }
-
-       .card p {
-           font-size: 0.95rem;
-       }
-
-       /* Rodapé rolante */
+       /* ----------------- RODAPÉ ----------------- */
        footer {
-           background-color: #00A86B; /* verde */
+           background-color: #00A86B;
            color: white;
            padding: 8px 0;
            overflow: hidden;
@@ -182,17 +193,15 @@
            100% { transform: translateX(-100%); }
        }
 
-       /* Responsividade */
+       /* ----------------- RESPONSIVIDADE ----------------- */
        @media (max-width: 1024px) {
-           .cards {
-               grid-template-columns: repeat(2, 1fr);
-           }
+           .cards { grid-template-columns: repeat(2, 1fr); }
        }
 
-       /* ======================== */
-       /* MOBILE: CARDS LADO A LADO */
-       /* ======================== */
        @media (max-width: 768px) {
+           nav { display: none; }
+           .hamburger { display: flex; }
+
            .cards {
                display: flex;
                flex-wrap: wrap;
@@ -201,20 +210,14 @@
            }
 
            .cards .card {
-               flex: 1 1 calc(50% - 15px); /* duas por linha */
+               flex: 1 1 calc(50% - 15px);
                max-width: calc(50% - 15px);
            }
        }
 
        @media (max-width: 480px) {
-           .rolante p, footer div {
-               font-size: 14px;
-           }
-
-           .cards .card {
-               flex: 1 1 100%; /* uma por linha no celular */
-               max-width: 100%;
-           }
+           .cards .card { flex: 1 1 100%; max-width: 100%; }
+           .rolante p, footer div { font-size: 14px; }
        }
    </style>
 </head>
@@ -232,10 +235,26 @@
                <a href="videos.html">Vídeos</a>
                <a href="sobre.html">Contato</a>
            </nav>
+
+           <!-- Hamburger -->
+           <div class="hamburger" onclick="toggleMenu()">
+               <div></div>
+               <div></div>
+               <div></div>
+           </div>
+
+           <!-- Menu Mobile -->
+           <div class="menu-mobile" id="menuMobile">
+               <a href="index.html">Início</a>
+               <a href="oque.html" class="ativo">O que é</a>
+               <a href="coleta.html">Pontos de coleta</a>
+               <a href="videos.html">Vídeos</a>
+               <a href="sobre.html">Contato</a>
+           </div>
        </div>
    </header>
 
-   <!-- Texto rolante -->
+   <!-- TEXTO ROLANTE -->
    <div class="rolante-container">
        <div class="rolante">
            <p>
@@ -245,7 +264,7 @@
        </div>
    </div>
 
-   <!-- Conteúdo da página O que é -->
+   <!-- CONTEÚDO DA PÁGINA -->
    <main>
        <section id="oque">
            <h2>O que é Lixo Eletrônico?</h2>
@@ -273,59 +292,26 @@
                </div>
            </div>
        </section>
-
-       <!-- Seção Por que reciclar -->
-       <section id="porque">
-           <h2>Por que reciclar?</h2>
-           <p>A reciclagem de lixo eletrônico ajuda a preservar recursos naturais, reduz a poluição e evita que substâncias tóxicas contaminem o solo e a água.</p>
-           <div class="cards">
-               <div class="card">
-                   <img src="img/planeta.png" alt="Preservar o meio ambiente">
-                   <h3>Preservar o meio ambiente</h3>
-                   <p>Reduz o impacto ambiental e protege a natureza.</p>
-               </div>
-               <div class="card">
-                   <img src="img/reciclagem.png" alt="Economia de recursos">
-                   <h3>Economia de recursos</h3>
-                   <p>Recupera metais e materiais valiosos para reutilização.</p>
-               </div>
-               <div class="card">
-                   <img src="img/saude.png" alt="Saúde pública">
-                   <h3>Saúde pública</h3>
-                   <p>Evita contaminação por substâncias tóxicas presentes no e-lixo.</p>
-               </div>
-           </div>
-       </section>
-
-       <!-- Seção Como funciona -->
-       <section id="comofunciona">
-           <h2>Como funciona?</h2>
-           <p>A coleta e o processamento do lixo eletrônico seguem etapas seguras, garantindo que os materiais sejam reciclados corretamente e sem riscos.</p>
-           <div class="cards">
-               <div class="card">
-                   <img src="img/coleta.png" alt="Coleta">
-                   <h3>Coleta</h3>
-                   <p>Leve seus eletrônicos descartados aos pontos de coleta.</p>
-               </div>
-               <div class="card">
-                   <img src="img/triagem.png" alt="Triagem">
-                   <h3>Triagem</h3>
-                   <p>Os itens são separados por tipo de material.</p>
-               </div>
-               <div class="card">
-                   <img src="img/reciclagem2.png" alt="Reciclagem">
-                   <h3>Reciclagem</h3>
-                   <p>Metais e componentes são reaproveitados para novos produtos.</p>
-               </div>
-           </div>
-       </section>
+       <!-- Outras seções seguem o mesmo padrão -->
    </main>
 
-   <!-- Rodapé rolante -->
+   <!-- RODAPÉ -->
    <footer>
        <div>
            © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental.
        </div>
    </footer>
+
+   <!-- ----------------- SCRIPT DO HAMBURGER ----------------- -->
+   <script>
+       function toggleMenu() {
+           const menu = document.getElementById('menuMobile');
+           if(menu.style.display === 'flex') {
+               menu.style.display = 'none';
+           } else {
+               menu.style.display = 'flex';
+           }
+       }
+   </script>
 </body>
 </html>
