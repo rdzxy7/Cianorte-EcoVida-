@@ -723,7 +723,11 @@ footer {
   margin-top: 30px;
 }
 
-/* Ícone hamburguer escondido no desktop */
+/* ========================= */
+/* MENU HAMBURGUER MOBILE */
+/* ========================= */
+
+/* Ícone hamburguer (desktop escondido) */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -738,21 +742,43 @@ footer {
     display: block;
   }
 
+  /* Menu escondido por padrão, vertical e sobre o conteúdo */
   .menu nav {
     display: none;
-    flex-direction: column;
+    flex-direction: column; /* vertical */
     background: #00CE76;
     width: 100%;
+    position: absolute;  /* fica sobre o conteúdo */
+    top: 60px;           /* altura do header */
+    left: 0;
     padding: 10px 0;
+    z-index: 999;        /* sobre outros elementos */
   }
 
+  /* Menu ativo ao clicar */
   .menu nav.active {
     display: flex;
   }
 
+  /* Links centralizados na vertical */
   .menu nav a {
     margin: 10px 0;
     font-size: 16px;
     text-align: center;
+    color: white;
+  }
+
+  /* Ajuste do login no mobile */
+  .login {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Celulares menores */
+@media (max-width: 480px) {
+  .menu nav a {
+    font-size: 14px;
   }
 }
