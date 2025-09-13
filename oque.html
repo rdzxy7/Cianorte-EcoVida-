@@ -1,364 +1,368 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O que é - Cianorte EcoVida</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(270deg, #00CE76, #0077ff);
-            min-height: 100vh;
-            color: white;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>O que é - Cianorte EcoVida</title>
+   <style>
+       body {
+           margin: 0;
+           font-family: Arial, sans-serif;
+           background: linear-gradient(270deg, #00CE76, #0077ff);
+           min-height: 100vh;
+           color: white;
+       }
 
-        html { scroll-behavior: smooth; }
+       html { scroll-behavior: smooth; }
 
-        /* ----------------- CABEÇALHO ----------------- */
-        header {
-            background-color: #00CE76;
-            padding: 10px 20px;
-            width: 100%;
-            box-sizing: border-box;
-            position: relative;
-        }
+       /* ----------------- CABEÇALHO ----------------- */
+       header {
+           background-color: #00CE76;
+           padding: 10px 20px;
+           width: 100%;
+           box-sizing: border-box;
+           position: relative;
+       }
 
-        header .container {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* centralizado no desktop */
-            gap: 50px;
-            flex-wrap: wrap;
-        }
+       header .container {
+           display: flex;
+           align-items: center;
+           justify-content: center; /* centraliza nav */
+           position: relative;
+       }
 
-        header .logo img {
-            height: 60px;
-        }
+       /* Logo fixa à esquerda */
+       header .logo {
+           position: absolute;
+           left: 20px;
+       }
 
-        nav {
-            display: flex;
-            gap: 15px;
-        }
+       header .logo img {
+           height: 60px;
+       }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
+       nav {
+           display: flex;
+           gap: 15px;
+       }
 
-        nav a.ativo { text-decoration: underline; }
+       nav a {
+           color: white;
+           text-decoration: none;
+           font-weight: bold;
+           font-size: 14px;
+       }
 
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
+       nav a.ativo { text-decoration: underline; }
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-        }
+       /* Hamburger */
+       .hamburger {
+           display: none;
+           flex-direction: column;
+           cursor: pointer;
+           gap: 5px;
+       }
 
-        /* Menu mobile */
-        .menu-mobile {
-            display: none;
-            flex-direction: column;
-            background-color: #00CE76;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 200px;
-            padding: 10px;
-            border-radius: 0 0 8px 8px;
-        }
+       .hamburger div {
+           width: 25px;
+           height: 3px;
+           background-color: white;
+       }
 
-        .menu-mobile a {
-            padding: 8px 0;
-            border-bottom: 1px solid #008f57;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
+       /* Menu mobile */
+       .menu-mobile {
+           display: none;
+           flex-direction: column;
+           background-color: #00CE76;
+           position: absolute;
+           top: 60px;
+           right: 0;
+           width: 200px;
+           padding: 10px;
+           border-radius: 0 0 8px 8px;
+       }
 
-        .menu-mobile a:last-child { border-bottom: none; }
+       .menu-mobile a {
+           padding: 8px 0;
+           border-bottom: 1px solid #008f57;
+           color: white; /* muda o texto para branco */
+           text-decoration: none;
+       }
 
-        /* ----------------- TEXTO ROLANTE ----------------- */
-        .rolante-container {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 5px 0;
-            background-color: #00A86B;
-        }
+       .menu-mobile a:last-child { border-bottom: none; }
 
-        .rolante p {
-            display: inline-block;
-            padding-left: 100%;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            animation: rolar 20s linear infinite;
-        }
+       /* ----------------- TEXTO ROLANTE ----------------- */
+       .rolante-container {
+           width: 100%;
+           overflow: hidden;
+           white-space: nowrap;
+           padding: 5px 0;
+           background-color: #00A86B;
+       }
 
-        @keyframes rolar {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+       .rolante p {
+           display: inline-block;
+           padding-left: 100%;
+           color: white;
+           font-weight: bold;
+           font-size: 14px;
+           animation: rolar 20s linear infinite;
+       }
 
-        .rolante a.botao {
-            background-color: #008000;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-left: 10px;
-            text-decoration: none;
-        }
+       @keyframes rolar {
+           0% { transform: translateX(100%); }
+           100% { transform: translateX(-100%); }
+       }
 
-        .rolante a.botao:hover { background-color: #00CE76; }
+       .rolante a.botao {
+           background-color: #008000;
+           color: white;
+           padding: 5px 10px;
+           border-radius: 5px;
+           font-weight: bold;
+           margin-left: 10px;
+           text-decoration: none;
+       }
 
-        /* ----------------- SEÇÕES ----------------- */
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+       .rolante a.botao:hover { background-color: #00CE76; }
 
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
+       /* ----------------- SEÇÕES ----------------- */
+       section {
+           padding: 50px 20px;
+           text-align: center;
+       }
 
-        section p {
-            font-size: 1rem;
-            color: white;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
+       section h2 {
+           font-size: 2rem;
+           margin-bottom: 20px;
+           color: white;
+           text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+       }
 
-        /* Cards */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            justify-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+       section p {
+           font-size: 1rem;
+           color: white;
+           margin-bottom: 40px;
+           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+       }
 
-        .card {
-            text-align: center;
-            padding: 15px;
-            transition: transform 0.3s;
-            width: 100%;
-            max-width: 260px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: transparent;
-            box-shadow: none;
-        }
+       /* Cards */
+       .cards {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+           gap: 25px;
+           justify-items: center;
+           max-width: 1200px;
+           margin: 0 auto;
+       }
 
-        .card:hover { transform: translateY(-5px); }
+       .card {
+           text-align: center;
+           padding: 15px;
+           transition: transform 0.3s;
+           width: 100%;
+           max-width: 260px;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           background: transparent;
+           box-shadow: none;
+       }
 
-        .card img {
-            width: 100%;
-            max-height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            cursor: pointer;
-        }
+       .card:hover { transform: translateY(-5px); }
 
-        .card h3, .card p {
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
+       .card img {
+           width: 100%;
+           max-height: 180px;
+           object-fit: cover;
+           border-radius: 12px;
+           margin-bottom: 12px;
+           cursor: pointer;
+       }
 
-        .card h3 {
-            margin: 10px 0 6px;
-            font-size: 1.2rem;
-        }
+       .card h3, .card p {
+           color: white;
+           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+       }
 
-        .card p { font-size: 0.95rem; }
+       .card h3 {
+           margin: 10px 0 6px;
+           font-size: 1.2rem;
+       }
 
-        /* ----------------- RODAPÉ ROLANTE ----------------- */
-        footer {
-            background-color: #00A86B;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 8px 0;
-            position: relative;
-        }
+       .card p { font-size: 0.95rem; }
 
-        .footer-rolante-container {
-            width: 100%;
-            overflow: hidden;
-        }
+       /* ----------------- RODAPÉ ----------------- */
+       footer {
+           background-color: #00A86B;
+           overflow: hidden;
+           white-space: nowrap;
+           padding: 8px 0;
+       }
 
-        .footer-rolante {
-            display: inline-block;
-            padding-left: 100%;
-            animation: rolar-footer 20s linear infinite;
-            color: white;
-            font-weight: bold;
-        }
+       .footer-rolante-container {
+           width: 100%;
+           overflow: hidden;
+       }
 
-        @keyframes rolar-footer {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+       .footer-rolante {
+           display: inline-block;
+           padding-left: 100%;
+           animation: rolar-footer 15s linear infinite;
+           color: white;
+           font-weight: bold;
+       }
 
-        /* ----------------- RESPONSIVIDADE ----------------- */
-        @media (max-width: 768px) {
-            nav { display: none; }
-            .hamburger { display: flex; }
+       @keyframes rolar-footer {
+           from { transform: translateX(0); }
+           to { transform: translateX(-100%); }
+       }
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
-        }
+       /* ----------------- RESPONSIVIDADE ----------------- */
+       @media (max-width: 768px) {
+           nav { display: none; }
+           .hamburger { display: flex; }
 
-    </style>
+           .cards {
+               grid-template-columns: 1fr;
+           }
+       }
+   </style>
 </head>
 <body>
-    <!-- CABEÇALHO -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
-            </div>
-            <nav>
-                <a href="index.html">Início</a>
-                <a href="oque.html" class="ativo">O que é</a>
-                <a href="coleta.html">Pontos de coleta</a>
-                <a href="videos.html">Vídeos</a>
-                <a href="sobre.html">Contato</a>
-            </nav>
+   <!-- CABEÇALHO -->
+   <header>
+       <div class="container">
+           <div class="logo">
+               <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
+           </div>
+           <nav>
+               <a href="index.html">Início</a>
+               <a href="oque.html" class="ativo">O que é</a>
+               <a href="coleta.html">Pontos de coleta</a>
+               <a href="videos.html">Vídeos</a>
+               <a href="sobre.html">Contato</a>
+           </nav>
 
-            <!-- Hamburger -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+           <!-- Hamburger -->
+           <div class="hamburger" onclick="toggleMenu()">
+               <div></div>
+               <div></div>
+               <div></div>
+           </div>
 
-            <!-- Menu Mobile -->
-            <div class="menu-mobile" id="menuMobile">
-                <a href="index.html">Início</a>
-                <a href="oque.html" class="ativo">O que é</a>
-                <a href="coleta.html">Pontos de coleta</a>
-                <a href="videos.html">Vídeos</a>
-                <a href="sobre.html">Contato</a>
-            </div>
-        </div>
-    </header>
+           <!-- Menu Mobile -->
+           <div class="menu-mobile" id="menuMobile">
+               <a href="index.html">Início</a>
+               <a href="oque.html" class="ativo">O que é</a>
+               <a href="coleta.html">Pontos de coleta</a>
+               <a href="videos.html">Vídeos</a>
+               <a href="sobre.html">Contato</a>
+           </div>
+       </div>
+   </header>
 
-    <!-- TEXTO ROLANTE -->
-    <div class="rolante-container">
-        <div class="rolante">
-            <p>
-                Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-                <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-            </p>
-        </div>
-    </div>
+   <!-- Texto rolante -->
+   <div class="rolante-container">
+       <div class="rolante">
+           <p>
+               Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+               <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+           </p>
+       </div>
+   </div>
 
-    <!-- CONTEÚDO -->
-    <main>
-        <section id="oque">
-            <h2>O que é Lixo Eletrônico?</h2>
-            <p>Também conhecido como e-lixo, são equipamentos eletrônicos descartados que contêm materiais valiosos e substâncias perigosas.</p>
-            <div class="cards">
-                <div class="card">
-                    <img src="img/celular.webp" alt="Smartphones">
-                    <h3>Smartphones</h3>
-                    <p>Celulares, tablets e acessórios móveis</p>
-                </div>
-                <div class="card">
-                    <img src="img/computadores.jpg" alt="Computadores">
-                    <h3>Computadores</h3>
-                    <p>PCs, laptops, monitores e periféricos</p>
-                </div>
-                <div class="card">
-                    <img src="img/componentes.jpg" alt="Componentes">
-                    <h3>Componentes</h3>
-                    <p>Placas, processadores e memórias</p>
-                </div>
-                <div class="card">
-                    <img src="img/Eletrodomesticos.png" alt="Eletrodomésticos">
-                    <h3>Eletrodomésticos</h3>
-                    <p>TVs, micro-ondas e outros aparelhos</p>
-                </div>
-            </div>
-        </section>
+   <!-- Conteúdo da página O que é -->
+   <main>
+       <section id="oque">
+           <h2>O que é Lixo Eletrônico?</h2>
+           <p>Também conhecido como e-lixo, são equipamentos eletrônicos descartados que contêm materiais valiosos e substâncias perigosas.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/celular.webp" alt="Smartphones">
+                   <h3>Smartphones</h3>
+                   <p>Celulares, tablets e acessórios móveis</p>
+               </div>
+               <div class="card">
+                   <img src="img/computadores.jpg" alt="Computadores">
+                   <h3>Computadores</h3>
+                   <p>PCs, laptops, monitores e periféricos</p>
+               </div>
+               <div class="card">
+                   <img src="img/componentes.jpg" alt="Componentes">
+                   <h3>Componentes</h3>
+                   <p>Placas, processadores e memórias</p>
+               </div>
+               <div class="card">
+                   <img src="img/Eletrodomesticos.png" alt="Eletrodomésticos">
+                   <h3>Eletrodomésticos</h3>
+                   <p>TVs, micro-ondas e outros aparelhos</p>
+               </div>
+           </div>
+       </section>
 
-        <section id="porque">
-            <h2>Por que reciclar?</h2>
-            <p>A reciclagem de lixo eletrônico ajuda a preservar recursos naturais, reduz a poluição e evita que substâncias tóxicas contaminem o solo e a água.</p>
-            <div class="cards">
-                <div class="card">
-                    <img src="img/planeta.png" alt="Preservar o meio ambiente">
-                    <h3>Preservar o meio ambiente</h3>
-                    <p>Reduz o impacto ambiental e protege a natureza.</p>
-                </div>
-                <div class="card">
-                    <img src="img/reciclagem.png" alt="Economia de recursos">
-                    <h3>Economia de recursos</h3>
-                    <p>Recupera metais e materiais valiosos para reutilização.</p>
-                </div>
-                <div class="card">
-                    <img src="img/saude.png" alt="Saúde pública">
-                    <h3>Saúde pública</h3>
-                    <p>Evita contaminação por substâncias tóxicas presentes no e-lixo.</p>
-                </div>
-            </div>
-        </section>
+       <!-- Seção Por que reciclar -->
+       <section id="porque">
+           <h2>Por que reciclar?</h2>
+           <p>A reciclagem de lixo eletrônico ajuda a preservar recursos naturais, reduz a poluição e evita que substâncias tóxicas contaminem o solo e a água.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/planeta.png" alt="Preservar o meio ambiente">
+                   <h3>Preservar o meio ambiente</h3>
+                   <p>Reduz o impacto ambiental e protege a natureza.</p>
+               </div>
+               <div class="card">
+                   <img src="img/reciclagem.png" alt="Economia de recursos">
+                   <h3>Economia de recursos</h3>
+                   <p>Recupera metais e materiais valiosos para reutilização.</p>
+               </div>
+               <div class="card">
+                   <img src="img/saude.png" alt="Saúde pública">
+                   <h3>Saúde pública</h3>
+                   <p>Evita contaminação por substâncias tóxicas presentes no e-lixo.</p>
+               </div>
+           </div>
+       </section>
 
-        <section id="comofunciona">
-            <h2>Como funciona?</h2>
-            <p>A coleta e o processamento do lixo eletrônico seguem etapas seguras, garantindo que os materiais sejam reciclados corretamente e sem riscos.</p>
-            <div class="cards">
-                <div class="card">
-                    <img src="img/coleta.png" alt="Coleta">
-                    <h3>Coleta</h3>
-                    <p>Leve seus eletrônicos descartados aos pontos de coleta.</p>
-                </div>
-                <div class="card">
-                    <img src="img/triagem.png" alt="Triagem">
-                    <h3>Triagem</h3>
-                    <p>Os itens são separados por tipo de material.</p>
-                </div>
-                <div class="card">
-                    <img src="img/reciclagem2.png" alt="Reciclagem">
-                    <h3>Reciclagem</h3>
-                    <p>Metais e componentes são reaproveitados para novos produtos.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+       <!-- Seção Como funciona -->
+       <section id="comofunciona">
+           <h2>Como funciona?</h2>
+           <p>A coleta e o processamento do lixo eletrônico seguem etapas seguras, garantindo que os materiais sejam reciclados corretamente e sem riscos.</p>
+           <div class="cards">
+               <div class="card">
+                   <img src="img/coleta.png" alt="Coleta">
+                   <h3>Coleta</h3>
+                   <p>Leve seus eletrônicos descartados aos pontos de coleta.</p>
+               </div>
+               <div class="card">
+                   <img src="img/triagem.png" alt="Triagem">
+                   <h3>Triagem</h3>
+                   <p>Os itens são separados por tipo de material.</p>
+               </div>
+               <div class="card">
+                   <img src="img/reciclagem2.png" alt="Reciclagem">
+                   <h3>Reciclagem</h3>
+                   <p>Metais e componentes são reaproveitados para novos produtos.</p>
+               </div>
+           </div>
+       </section>
+   </main>
 
-    <!-- RODAPÉ ROLANTE -->
-    <footer>
-        <div class="footer-rolante-container">
-            <div class="footer-rolante">
-                © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
-                © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-    </footer>
+   <!-- Rodapé rolante -->
+   <footer>
+       <div class="footer-rolante-container">
+           <div class="footer-rolante">
+               © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
+               © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
+           </div>
+       </div>
+   </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menuMobile');
-            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-        }
-    </script>
+   <script>
+       function toggleMenu() {
+           const menu = document.getElementById('menuMobile');
+           menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+       }
+   </script>
 </body>
 </html>
