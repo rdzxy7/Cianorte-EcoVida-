@@ -27,7 +27,8 @@
        header .container {
            display: flex;
            align-items: center;
-           justify-content: space-between;
+           justify-content: center; /* centralizado no desktop */
+           gap: 40px; /* espaço entre logo e nav */
        }
 
        header .logo img {
@@ -54,6 +55,9 @@
            flex-direction: column;
            cursor: pointer;
            gap: 5px;
+           position: absolute;
+           right: 20px;
+           top: 15px;
        }
 
        .hamburger div {
@@ -76,11 +80,18 @@
        }
 
        .menu-mobile a {
+           color: white; /* palavra branca */
+           text-decoration: none; /* remove underline */
+           border-bottom: 1px solid rgba(255,255,255,0.3); /* linha branca suave */
            padding: 8px 0;
-           border-bottom: 1px solid #008f57;
        }
 
        .menu-mobile a:last-child { border-bottom: none; }
+
+       .menu-mobile a:hover {
+           color: #00CE76; /* cor ao passar o mouse */
+           border-bottom-color: white; /* linha ao passar o mouse */
+       }
 
        /* ----------------- TEXTO ROLANTE ----------------- */
        .rolante-container {
@@ -218,7 +229,7 @@
                grid-template-columns: 1fr;
            }
        }
-</style>
+   </style>
 </head>
 <body>
    <!-- CABEÇALHO -->
@@ -253,7 +264,6 @@
        </div>
    </header>
 
-   
    <!-- Texto rolante -->
    <div class="rolante-container">
        <div class="rolante">
