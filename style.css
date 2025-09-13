@@ -722,3 +722,37 @@ footer {
   padding: 10px;
   margin-top: 30px;
 }
+
+/* Ícone hamburguer escondido no desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu nav {
+    display: none;
+    flex-direction: column;
+    background: #00CE76;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu nav.active {
+    display: flex;
+  }
+
+  .menu nav a {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+  }
+}

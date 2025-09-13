@@ -19,15 +19,22 @@
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
+
+           <!-- Botão menu hamburguer -->
+           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
            <div class="menu">
                <nav>
                    <a href="#inicio">Início</a>
                    <a href="oque.html" target="_blank">O que é</a>
-                   <a href="coleta.html" target="_blank">Pontos de coleta</a>
-                   <a href="videos.html">Vídeos</a>
-                   <a href="sobre.html">Sobre</a>
+                   <a href="#porque">Por que</a>
+                   <a href="#comofunciona">Como funciona</a>
+                   <a href="#pontos">Pontos de coleta</a>
+                   <a href="video.html">Vídeos</a>
+                   <a href="#contato">Contato</a>
                </nav>
            </div>
+
            <div class="login">
                <button id="btnLogin" onclick="abrirLogin()">
                    <img src="img/boneco login.png" alt="Login" width="24" height="24">
@@ -38,15 +45,11 @@
    </header>
 
    <!-- Texto rolante -->
-<div class="rolante-container">
-  <div class="rolante">
-    <p>
-      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-      <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-    </p>
-  </div>
-</div>
-
+   <div class="rolante-container">
+       <div class="rolante">
+           <p>Recicle seus eletrônicos! | Reduza o lixo eletrônico! | Proteja o meio ambiente! | Doe seus aparelhos!</p>
+       </div>
+   </div>
 
    <!-- Seção principal (HERO BANNER) -->
    <main>
@@ -117,6 +120,12 @@
        </div>
    </div>
 
+   <!-- Script -->
    <script src="script.js"></script>
+   <script>
+       function toggleMenu() {
+           document.querySelector(".menu nav").classList.toggle("active");
+       }
+   </script>
 </body>
 </html>
