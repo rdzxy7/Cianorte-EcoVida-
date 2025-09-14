@@ -5,7 +5,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>O que é - Cianorte EcoVida</title>
    <style>
-       /* Fundo linear contínuo para toda a página */
        body {
            margin: 0;
            font-family: Arial, sans-serif;
@@ -14,43 +13,90 @@
            color: white;
        }
 
-        html { scroll-behavior: smooth; }
+       html { scroll-behavior: smooth; }
 
        /* CABEÇALHO */
        header {
-           background-color: #00CE76; /* verde */
-           padding: 10px 20px;
+           background-color: #00CE76;
            width: 100%;
            box-sizing: border-box;
            position: relative;
+           padding: 20px 80px;
+           min-height: 100px;
+           display: flex;
+           align-items: center;
        }
 
        header .container {
            display: flex;
            align-items: center;
-            justify-content: space-between;
+           justify-content: center;
+           position: relative;
+           width: 100%;
+       }
+
+       /* Logo fixa na esquerda */
+       header .logo {
+           position: absolute;
+           left: 20px;
+           top: 50%;
+           transform: translateY(-50%);
        }
 
        header .logo img {
-           height: 60px;
+           width: 120px;
+           height: auto;
        }
 
-        nav {
+       /* Menu centralizado */
+       header .menu {
+           position: relative;
+       }
+
+       header nav {
            display: flex;
-           gap: 0;
+           gap: 25px;
        }
 
        header nav a {
            color: white;
            text-decoration: none;
            font-weight: bold;
-           font-size: 14px;
+           font-size: 16px;
            letter-spacing: 1px;
            margin: 0 15px;
+           display: flex;
+           align-items: center;
+           height: 100%;
+           position: relative;
+       }
+
+       /* Linha gradiente que aparece apenas no hover */
+       header nav a::after {
+           content: "";
+           position: absolute;
+           left: 0;
+           bottom: -5px;
+           width: 0;
+           height: 4px;
+           background: linear-gradient(270deg, #ff2500, #ff7100, #ff2500);
+           background-size: 200% 100%;
+           transition: width 0.5s ease-in-out;
+       }
+
+       /* Ao passar o mouse, a linha aparece e anima */
+       header nav a:hover::after {
+           width: 100%;
+           animation: animar-linha 3s linear infinite;
+       }
+
+       @keyframes animar-linha {
+           0% { background-position: 0 0; }
+           100% { background-position: -200% 0; }
        }
 
        header nav a.ativo {
-           text-decoration: none; /* remove underline na palavra "O que é" */
+           text-decoration: none;
        }
 
        /* Hamburger */
@@ -59,6 +105,10 @@
            flex-direction: column;
            cursor: pointer;
            gap: 5px;
+           position: absolute;
+           right: 20px;
+           top: 50%;
+           transform: translateY(-50%);
        }
 
        .hamburger div {
@@ -73,7 +123,7 @@
            flex-direction: column;
            background-color: #00CE76;
            position: absolute;
-           top: 60px;
+           top: 100%;
            right: 0;
            width: 200px;
            padding: 10px;
@@ -87,14 +137,13 @@
 
        .menu-mobile a:last-child { border-bottom: none; }
 
-
        /* Texto rolante */
        .rolante-container {
            width: 100%;
            overflow: hidden;
            white-space: nowrap;
            padding: 5px 0;
-           background-color: #00A86B; /* fundo verde */
+           background-color: #00A86B;
        }
 
        .rolante p {
@@ -113,7 +162,7 @@
 
        .rolante a.botao {
            display: inline-block;
-           background-color: #008000; /* botão verde escuro */
+           background-color: #008000;
            color: white;
            padding: 5px 10px;
            border-radius: 5px;
@@ -196,7 +245,7 @@
            font-size: 0.95rem;
        }
 
-        /* ----------------- RODAPÉ ----------------- */
+       /* Rodapé animado */
        footer {
            background-color: #00A86B;
            overflow: hidden;
@@ -212,16 +261,15 @@
        .footer-rolante {
            display: inline-block;
            padding-left: 100%;
-           animation: rolar-footer 15s linear infinite;
+           animation: rolar-footer 20s linear infinite;
            color: white;
            font-weight: bold;
        }
 
        @keyframes rolar-footer {
-           from { transform: translateX(0); }
-           to { transform: translateX(-100%); }
+           0% { transform: translateX(100%); }
+           100% { transform: translateX(-100%); }
        }
-
 
        /* Responsividade */
        @media (max-width: 1024px) {
@@ -230,28 +278,9 @@
            }
        }
 
-       /* ======================== */
-       /* MOBILE: CARDS LADO A LADO */
-       /* ======================== */
-       @media (max-width: 768px) {
-           .cards {
-               display: flex;
-               flex-wrap: wrap;
-               justify-content: center;
-               gap: 15px;
-           }
-
-           .cards .card {
-               flex: 1 1 calc(50% - 15px); /* duas por linha */
-               max-width: calc(50% - 15px);
-           }
-       }
-
-     /* ----------------- RESPONSIVIDADE ----------------- */
        @media (max-width: 768px) {
            nav { display: none; }
            .hamburger { display: flex; }
-
            .cards {
                grid-template-columns: 1fr;
            }
@@ -265,7 +294,8 @@
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
-           <nav>
+
+           <nav class="menu">
                <a href="index.html">Início</a>
                <a href="oque.html" class="ativo">O que é</a>
                <a href="coleta.html">Pontos de coleta</a>
@@ -301,7 +331,7 @@
        </div>
    </div>
 
-   <!-- Conteúdo da página O que é -->
+   <!-- Conteúdo -->
    <main>
        <section id="oque">
            <h2>O que é Lixo Eletrônico?</h2>
@@ -377,10 +407,12 @@
        </section>
    </main>
 
-   <!-- Rodapé rolante -->
+   <!-- Rodapé animado -->
    <footer>
-       <div>
-           © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental.
+       <div class="footer-rolante-container">
+           <div class="footer-rolante">
+               © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental.
+           </div>
        </div>
    </footer>
 
