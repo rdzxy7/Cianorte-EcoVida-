@@ -84,7 +84,6 @@
            transition: width 0.5s ease-in-out;
        }
 
-       /* Ao passar o mouse, a linha aparece e anima */
        header nav a:hover::after {
            width: 100%;
            animation: animar-linha 3s linear infinite;
@@ -109,6 +108,7 @@
            right: 20px;
            top: 50%;
            transform: translateY(-50%);
+           z-index: 1000;
        }
 
        .hamburger div {
@@ -128,11 +128,15 @@
            width: 200px;
            padding: 10px;
            border-radius: 0 0 8px 8px;
+           z-index: 999;
        }
 
        .menu-mobile a {
            padding: 8px 0;
            border-bottom: 1px solid #008f57;
+           color: white;
+           font-weight: bold;
+           text-decoration: none;
        }
 
        .menu-mobile a:last-child { border-bottom: none; }
@@ -272,15 +276,16 @@
        }
 
        /* Responsividade */
-       @media (max-width: 1024px) {
-           .cards {
-               grid-template-columns: repeat(2, 1fr);
-           }
-       }
-
        @media (max-width: 768px) {
-           nav { display: none; }
-           .hamburger { display: flex; }
+           header nav {
+               display: none;
+           }
+           .hamburger {
+               display: flex;
+           }
+           .menu-mobile {
+               display: none;
+           }
            .cards {
                grid-template-columns: 1fr;
            }
@@ -333,7 +338,7 @@
 
    <!-- Conteúdo -->
    <main>
-       <section id="oque">
+    <section id="oque">
            <h2>O que é Lixo Eletrônico?</h2>
            <p>Também conhecido como e-lixo, são equipamentos eletrônicos descartados que contêm materiais valiosos e substâncias perigosas.</p>
            <div class="cards">
@@ -419,7 +424,11 @@
    <script>
        function toggleMenu() {
            const menu = document.getElementById('menuMobile');
-           menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+           if(menu.style.display === 'flex'){
+               menu.style.display = 'none';
+           } else {
+               menu.style.display = 'flex';
+           }
        }
    </script>
 </body>
