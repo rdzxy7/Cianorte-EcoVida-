@@ -148,8 +148,8 @@
            width: 100%;
            overflow: hidden;
            white-space: nowrap;
-           padding: 5px 0;
-           background-color: #00A86B;
+           padding:10px;
+           background-color:#00b362 ;
        }
 
        .rolante p {
@@ -184,6 +184,7 @@
        /* HERO SECTION */
        .hero-section {
            display: flex;
+           flex-direction: column;
            justify-content: center;
            align-items: center;
            text-align: center;
@@ -193,17 +194,11 @@
            animation: gradientAnim 10s ease infinite;
        }
 
-       .hero-section h1 {
-           font-size: 2.5rem;
-           margin-bottom: 15px;
-           text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-       }
-
+       .hero-section h1,
        .hero-section p {
-           font-size: 1.2rem;
-           max-width: 600px;
-           margin: 0 auto;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+           background: linear-gradient(270deg, #00CE76, #0077ff);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
        }
 
        @keyframes gradientAnim {
@@ -378,10 +373,8 @@
 
    <!-- HERO SECTION -->
    <section class="hero-section">
-       <div>
-           <h1>Recicle hoje para um futuro melhor 🌍</h1>
-           <p>Descubra como o descarte consciente do lixo eletrônico ajuda o planeta e a comunidade.</p>
-       </div>
+       <h1>Recicle hoje para um futuro melhor 🌍</h1>
+       <p>Descubra como o descarte consciente do lixo eletrônico ajuda o planeta e a comunidade.</p>
    </section>
 
    <!-- Conteúdo -->
