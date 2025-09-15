@@ -8,7 +8,9 @@
        body {
            margin: 0;
            font-family: Arial, sans-serif;
-           background: linear-gradient(270deg, #00CE76, #0077ff);
+           background: linear-gradient(270deg, #00CE76, #0077ff, #00CE76);
+           background-size: 600% 600%;
+           animation: animarFundo 10s ease infinite;
            min-height: 100vh;
            color: white;
        }
@@ -290,6 +292,13 @@
                grid-template-columns: 1fr;
            }
        }
+
+       /* NOVA ANIMAÇÃO PARA O FUNDO */
+       @keyframes animarFundo {
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
+       }
    </style>
 </head>
 <body>
@@ -338,7 +347,7 @@
 
    <!-- Conteúdo -->
    <main>
-    <section id="oque">
+       <section id="oque">
            <h2>O que é Lixo Eletrônico?</h2>
            <p>Também conhecido como e-lixo, são equipamentos eletrônicos descartados que contêm materiais valiosos e substâncias perigosas.</p>
            <div class="cards">
@@ -365,7 +374,6 @@
            </div>
        </section>
 
-       <!-- Seção Por que reciclar -->
        <section id="porque">
            <h2>Por que reciclar?</h2>
            <p>A reciclagem de lixo eletrônico ajuda a preservar recursos naturais, reduz a poluição e evita que substâncias tóxicas contaminem o solo e a água.</p>
@@ -388,7 +396,6 @@
            </div>
        </section>
 
-       <!-- Seção Como funciona -->
        <section id="comofunciona">
            <h2>Como funciona?</h2>
            <p>A coleta e o processamento do lixo eletrônico seguem etapas seguras, garantindo que os materiais sejam reciclados corretamente e sem riscos.</p>
