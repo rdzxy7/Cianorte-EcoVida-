@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cianorte EcoVida</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+      /* Rolagem suave */
+      html {
+        scroll-behavior: smooth;
+      }
+       </style>
+</head>
+<body>
+   <!-- CABEÇALHO -->
+   <header>
+       <div class="container">
+           <div class="logo">
+               <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
+           </div>
+
+           <!-- Botão menu hamburguer -->
+           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+           <div class="menu">
+               <nav>
+                   <a href="#inicio">Início</a>
+                   <a href="oque.html" target="_blank">O que é</a>
+                   <a href="coleta.html">Pontos de coleta</a>
+                   <a href="video.html">Vídeos</a>
+                   <a href="sobre.html">Sobre</a>
+               </nav>
+           </div>
+
+           <div class="login">
+               <button id="btnLogin" onclick="abrirLogin()">
+                   <img src="img/boneco login.png" alt="Login" width="24" height="24">
+                   <span id="loginText">Login</span>
+               </button>
+           </div>
+       </div>
+   </header>
+
+   <!-- Rolante -->
+   <div class="rolante-container">
+      <div class="rolante">
+         <p>
+           Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+           <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+         </p>
+      </div>
+   </div>
+
+   <!-- Seção principal (HERO BANNER) -->
+   <main>
+       <section id="inicio" class="hero-section">
+           <div class="hero-content">
+               <div class="hero-icon">
+                   <img src="img/reciclagem.png" alt="Reciclagem" width="150" class="logo animada">
+               </div>
+               <h1>
+                   Transforme <span class="green">Lixo Eletrônico</span>
+                   em um <span class="blue">Futuro Sustentável</span>
+               </h1>
+               <p>
+                   Descubra como reciclar seus dispositivos eletrônicos de forma responsável
+                   e contribuir para um planeta mais limpo e tecnológico.
+               </p>
+               <a href="oque.html" class="hero-btn" target="_blank">Saiba Mais →</a>
+           </div>
+       </section>
+
+       <!-- SEÇÃO DE NOTÍCIAS -->
+       <section id="noticias">
+          <div class="container">
+             <h2>Notícias</h2>
+             <div class="carrossel-noticias">
+                <div class="card-noticia">
+                   <img src="img/imagem1.jpg" alt="Notícia 1">
+                   <h3>Reciclagem de Lixo Eletrônico Cresce no Brasil</h3>
+                   <p>Apesar dos desafios, os pontos de coleta e a conscientização aumentaram nos últimos anos.</p>
+                   <a href="#" class="ler-mais">Leia mais</a>
+                </div>
+                <div class="card-noticia">
+                   <img src="img/imagem2.jpg" alt="Notícia 2">
+                   <h3>Projetos Sustentáveis de E-lixo em São Paulo</h3>
+                   <p>Iniciativas em parceria com empresas estão promovendo a logística reversa eficiente.</p>
+                   <a href="#" class="ler-mais">Leia mais</a>
+                </div>
+                <div class="card-noticia">
+                   <img src="img/imagem3.jpg" alt="Notícia 3">
+                   <h3>Pontos de Coleta de E-lixo se Expandem</h3>
+                   <p>Mais de 3.400 pontos de coleta espalhados pelo país facilitam o descarte consciente.</p>
+                   <a href="#" class="ler-mais">Leia mais</a>
+                </div>
+             </div>
+          </div>
+       </section>
+
+       <div id="welcomeMessage" class="welcome"></div>
+       <div id="logoutContainer" style="text-align:center; margin-top:20px;">
+           <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
+       </div>
+   </main>
+
+   <!-- Modal Login -->
+   <div id="loginModal" class="modal">
+       <div class="modal-content">
+           <span class="fechar" onclick="fecharLogin()">&times;</span>
+           <h2>Login</h2>
+           <form id="formLogin">
+               <label for="usuario">E-mail</label>
+               <input type="email" id="usuario" placeholder="Digite seu e-mail" required>
+
+               <label for="senha">Senha</label>
+               <div class="senha-container">
+                   <input type="password" id="senha" placeholder="Digite sua senha" required>
+                   <span class="toggleSenha" onclick="toggleSenha('senha')">&#128065;</span>
+               </div>
+
+               <button type="submit" class="btnLogin">Entrar</button>
+           </form>
+           <p>Não tem uma conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
+       </div>
+   </div>
+
+   <!-- Modal Cadastro -->
+   <div id="cadastroModal" class="modal">
+       <div class="modal-content">
+           <span class="fechar" onclick="fecharCadastro()">&times;</span>
+           <h2>Cadastro</h2>
+           <form id="formCadastro">
+               <label for="nome">Nome</label>
+               <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+               <label for="email">E-mail</label>
+               <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+               <label for="senhaCadastro">Senha</label>
+               <div class="senha-container">
+                   <input type="password" id="senhaCadastro" placeholder="Digite sua senha" required>
+                   <span class="toggleSenha" onclick="toggleSenha('senhaCadastro')">&#128065;</span>
+               </div>
+
+               <button type="submit" class="btnCadastro">Cadastrar</button>
+           </form>
+       </div>
+   </div>
+
+   <!-- Script -->
+   <script src="script.js"></script>
+   <script>
+       function toggleMenu() {
+           document.querySelector(".menu nav").classList.toggle("active");
+       }
+
+       // Carrossel automático
+       const carrossel = document.querySelector('.carrossel-noticias');
+       let scrollAmount = 0;
+       const scrollStep = 2;
+       const maxScroll = carrossel.scrollWidth - carrossel.clientWidth;
+
+       function scrollCarrossel() {
+           scrollAmount += scrollStep;
+           if(scrollAmount >= maxScroll) scrollAmount = 0;
+           carrossel.scrollLeft = scrollAmount;
+       }
+
+       setInterval(scrollCarrossel, 20);
+   </script>
+</body>
+</html>

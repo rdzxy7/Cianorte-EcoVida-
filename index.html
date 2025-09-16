@@ -10,7 +10,7 @@
       html {
         scroll-behavior: smooth;
       }
-   </style>
+       </style>
 </head>
 <body>
    <!-- CABEÇALHO -->
@@ -42,13 +42,15 @@
        </div>
    </header>
 
+   <!-- Rolante -->
    <div class="rolante-container">
-  <div class="rolante">
-    <p>
-      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-      <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-    </p>
-  </div>
+      <div class="rolante">
+         <p>
+           Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+           <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+         </p>
+      </div>
+   </div>
 
    <!-- Seção principal (HERO BANNER) -->
    <main>
@@ -67,6 +69,33 @@
                </p>
                <a href="oque.html" class="hero-btn" target="_blank">Saiba Mais →</a>
            </div>
+       </section>
+
+       <!-- SEÇÃO DE NOTÍCIAS -->
+       <section id="noticias">
+          <div class="container">
+             <h2>Notícias</h2>
+             <div class="carrossel-noticias">
+                <div class="card-noticia">
+                   <img src="img/imagem1.jpg" alt="Notícia 1">
+                   <h3>Reciclagem de Lixo Eletrônico Cresce no Brasil</h3>
+                   <p>Apesar dos desafios, os pontos de coleta e a conscientização aumentaram nos últimos anos.</p>
+                   <a href="#" class="ler-mais">Leia mais</a>
+                </div>
+                <div class="card-noticia">
+                   <img src="img/imagem2.jpg" alt="Notícia 2">
+                   <h3>Projetos Sustentáveis de E-lixo em São Paulo</h3>
+                   <p>Iniciativas em parceria com empresas estão promovendo a logística reversa eficiente.</p>
+                   <a href="#" class="ler-mais">Leia mais</a>
+                </div>
+                <div class="card-noticia">
+                   <img src="img/imagem3.jpg" alt="Notícia 3">
+                   <h3>Pontos de Coleta de E-lixo se Expandem</h3>
+                   <p>Mais de 3.400 pontos de coleta espalhados pelo país facilitam o descarte consciente.</p>
+                   <a href="#" class="ler-mais">Leia mais</a>
+                </div>
+             </div>
+          </div>
        </section>
 
        <div id="welcomeMessage" class="welcome"></div>
@@ -125,6 +154,20 @@
        function toggleMenu() {
            document.querySelector(".menu nav").classList.toggle("active");
        }
+
+       // Carrossel automático
+       const carrossel = document.querySelector('.carrossel-noticias');
+       let scrollAmount = 0;
+       const scrollStep = 2;
+       const maxScroll = carrossel.scrollWidth - carrossel.clientWidth;
+
+       function scrollCarrossel() {
+           scrollAmount += scrollStep;
+           if(scrollAmount >= maxScroll) scrollAmount = 0;
+           carrossel.scrollLeft = scrollAmount;
+       }
+
+       setInterval(scrollCarrossel, 20);
    </script>
 </body>
 </html>
