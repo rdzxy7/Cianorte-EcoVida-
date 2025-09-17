@@ -6,18 +6,25 @@
    <title>Cianorte EcoVida</title>
    <link rel="stylesheet" href="style.css">
    <style>
-      html { scroll-behavior: smooth; }
-
+      /* Rolagem suave */
+      html {
+        scroll-behavior: smooth;
+      }
    </style>
 </head>
 <body>
    <!-- CABEÇALHO -->
    <header>
        <div class="container">
+           <!-- Logo à esquerda -->
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
+
+           <!-- Botão menu hamburguer -->
            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+           <!-- Menu centralizado -->
            <div class="menu">
                <nav>
                    <a href="#inicio">Início</a>
@@ -27,26 +34,17 @@
                    <a href="sobre.html">Sobre</a>
                </nav>
            </div>
-           <div class="login">
-               <button id="btnLogin" onclick="abrirLogin()">
-                   <img src="img/boneco login.png" alt="Login" width="24" height="24">
-                   <span id="loginText">Login</span>
-               </button>
-           </div>
        </div>
    </header>
 
-   <!-- Rolante informativo -->
+   <!-- Texto rolante -->
    <div class="rolante-container">
-      <div class="rolante">
-         <p>
-           Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-           <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-         </p>
-      </div>
+       <div class="rolante">
+           <p>Recicle seus eletrônicos! | Reduza o lixo eletrônico! | Proteja o meio ambiente! | Doe seus aparelhos!</p>
+       </div>
    </div>
 
-   <!-- HERO BANNER -->
+   <!-- Seção principal (HERO BANNER) -->
    <main>
        <section id="inicio" class="hero-section">
            <div class="hero-content">
@@ -64,80 +62,52 @@
                <a href="oque.html" class="hero-btn" target="_blank">Saiba Mais →</a>
            </div>
        </section>
+ 
+         <section id="ultimas">
+    <div class="container-noticias">
+        <h2 class="titulo-noticias">Últimas do E-lixo</h2>
+        <p class="subtitulo-noticias">Fique por dentro das notícias sobre descarte de lixo eletrônico no Paraná</p>
 
-       <!-- SEÇÃO DE NOTÍCIAS MAIORES -->
-       <section id="ultimas">
-          <div class="container">
-             <h2>Últimas do E-lixo</h2>
-             <div class="carrossel-noticias">
-                <div class="card-noticia">
-                   <img src="img/imagem1.jpg" alt="Notícia 1">
-                   <h3>Reciclagem de Lixo Eletrônico Cresce no Brasil</h3>
-                   <p>Apesar dos desafios, os pontos de coleta e a conscientização aumentaram nos últimos anos.</p>
-                   <a href="#" class="ler-mais">Leia mais</a>
-                </div>
-                <div class="card-noticia">
-                   <img src="img/imagem2.jpg" alt="Notícia 2">
-                   <h3>Projetos Sustentáveis de E-lixo em São Paulo</h3>
-                   <p>Iniciativas em parceria com empresas estão promovendo a logística reversa eficiente.</p>
-                   <a href="#" class="ler-mais">Leia mais</a>
-                </div>
-                <div class="card-noticia">
-                   <img src="img/imagem3.jpg" alt="Notícia 3">
-                   <h3>Pontos de Coleta de E-lixo se Expandem</h3>
-                   <p>Mais de 3.400 pontos de coleta espalhados pelo país facilitam o descarte consciente.</p>
-                   <a href="#" class="ler-mais">Leia mais</a>
-                </div>
-             </div>
-          </div>
-       </section>
+        <div class="carrossel-noticias">
+            <!-- Notícia 1 -->
+            <div class="card-noticia">
+                <img src="img/images.jpg" alt="♻️ Paraná lidera em reciclagem e sustentabilidade">
+                <h3>Reciclagem de Lixo Eletrônico Cresce no Paraná</h3>
+                <p>O Paraná se destacou no Ranking de Competitividade dos Estados de 2025, alcançando a segunda melhor nota em sustentabilidade.</p>
+                <a href="https://www.comunicacao.pr.gov.br/noticias/aen/fc057a32-feb9-41d2-afc7-ba8018e38379?utm_source" target="_blank" class="btn-noticia">Ler mais →</a>
+            </div>
 
-       <div id="welcomeMessage" class="welcome"></div>
-       <div id="logoutContainer" style="text-align:center; margin-top:20px;">
-           <button id="btnLogout" onclick="logout()" style="display:none;">Logout</button>
-       </div>
+            <!-- Notícia 2 -->
+            <div class="card-noticia">
+                <img src="img/476776288_957243449844953_3753508952257976472_n.jpg" alt="🌿 Semana Lixo Zero Paraná 2025">
+                <h3>Projetos Sustentáveis de E-lixo em São Paulo</h3>
+                <p>Iniciativas em parceria com empresas estão promovendo a logística reversa eficiente.</p>
+                <a href="https://www.paranalixozero.com.br/slz25?utm_source" target="_blank" class="btn-noticia">Ler mais →</a>
+            </div>
+
+            <!-- Notícia 3 -->
+            <div class="card-noticia">
+                <img src="img/aa.jpg" alt="Notícia 3">
+                <h3>Pontos de Coleta de E-lixo se Expandem</h3>
+                <p>Mais de 3.400 pontos de coleta espalhados pelo país facilitam o descarte consciente.</p>
+                <a href="https://www.parana.pr.gov.br/aen/Noticia/Sanepar-recolhe-mais-de-48-toneladas-de-lixo-no-Litoral-em-apenas-6-dias?utm_source" target="_blank" class="btn-noticia">Ler mais →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
    </main>
 
-   <!-- Modal Login -->
-   <div id="loginModal" class="modal">
-       <div class="modal-content">
-           <span class="fechar" onclick="fecharLogin()">&times;</span>
-           <h2>Login</h2>
-           <form id="formLogin">
-               <label for="usuario">E-mail</label>
-               <input type="email" id="usuario" placeholder="Digite seu e-mail" required>
-               <label for="senha">Senha</label>
-               <div class="senha-container">
-                   <input type="password" id="senha" placeholder="Digite sua senha" required>
-                   <span class="toggleSenha" onclick="toggleSenha('senha')">&#128065;</span>
-               </div>
-               <button type="submit" class="btnLogin">Entrar</button>
-           </form>
-           <p>Não tem uma conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
-       </div>
-   </div>
+<!-- RODAPÉ -->
+    <footer>
+        <div class="footer-rolante-container">
+            <div class="footer-rolante">
+                © 2025 Cianorte EcoVida. Promovendo a reciclagem de lixo eletrônico e conscientização ambiental. &nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </footer>
 
-   <!-- Modal Cadastro -->
-   <div id="cadastroModal" class="modal">
-       <div class="modal-content">
-           <span class="fechar" onclick="fecharCadastro()">&times;</span>
-           <h2>Cadastro</h2>
-           <form id="formCadastro">
-               <label for="nome">Nome</label>
-               <input type="text" id="nome" placeholder="Digite seu nome" required>
-               <label for="email">E-mail</label>
-               <input type="email" id="email" placeholder="Digite seu e-mail" required>
-               <label for="senhaCadastro">Senha</label>
-               <div class="senha-container">
-                   <input type="password" id="senhaCadastro" placeholder="Digite sua senha" required>
-                   <span class="toggleSenha" onclick="toggleSenha('senhaCadastro')">&#128065;</span>
-               </div>
-               <button type="submit" class="btnCadastro">Cadastrar</button>
-           </form>
-       </div>
-   </div>
-
-   <!-- Scripts -->
+   <!-- Script -->
    <script src="script.js"></script>
    <script>
        function toggleMenu() {
