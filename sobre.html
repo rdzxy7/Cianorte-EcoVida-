@@ -15,6 +15,7 @@
           animation: gradientAnim 10s ease infinite;
           font-family: Arial, sans-serif;
           color: white;
+          transition: background-color 0.3s, color 0.3s;
       }
 
       @keyframes gradientAnim {
@@ -209,6 +210,30 @@
           from { transform: translateX(0); }
           to { transform: translateX(-100%); }
       }
+
+      /* Estilos para o Modo Escuro */
+      body.dark-mode {
+          background: #121212;
+          color: white;
+      }
+
+      button#theme-toggle {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background-color: #333;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          z-index: 1000;
+      }
+
+      button#theme-toggle:hover {
+          background-color: #555;
+      }
    </style>
 </head>
 <body>
@@ -300,5 +325,22 @@
        </div>
      </div>
    </footer>
+
+   <!-- Botão para alternar o tema -->
+   <button id="theme-toggle">Modo Escuro</button>
+
+   <script>
+      const toggleButton = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = 'Modo Claro';
+          } else {
+              toggleButton.textContent = 'Modo Escuro';
+          }
+      });
+   </script>
 </body>
 </html>
