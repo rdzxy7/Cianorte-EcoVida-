@@ -44,14 +44,11 @@
           height: 50px;
       }
 
-      /* Menu e login centralizados */
-      .menu-login {
+      /* Menu centralizado */
+      .menu {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
-          display: flex;
-          align-items: center;
-          gap: 20px;
       }
 
       .menu nav {
@@ -92,6 +89,8 @@
 
           .menu-toggle {
               display: block;
+              position: absolute;
+              right: 20px;
           }
       }
    </style>
@@ -105,27 +104,46 @@
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
 
-           <!-- Menu + Login centralizados -->
-           <div class="menu-login">
-               <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-               <div class="menu">
-                   <nav>
-                       <a href="index.html">Início</a>
-                       <a href="oque.html" target="_blank">O que é</a>
-                       <a href="coleta.html" class="ativo" target="_blank">Pontos de coleta</a>
-                       <a href="videos.html">Vídeos</a>
-                       <a href="sobre.html">Sobre</a>
-                   </nav>
-               </div>
-               <div class="login">
-                   <button id="btnLogin" onclick="abrirLogin()">
-                       <img src="img/boneco login.png" alt="Login" width="24" height="24">
-                       <span id="loginText">Login</span>
-                   </button>
-               </div>
+           <!-- Botão menu hamburguer -->
+           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+           <!-- Menu centralizado -->
+           <div class="menu">
+               <nav>
+                   <a href="index.html">Início</a>
+                   <a href="oque.html" target="_blank">O que é</a>
+                   <a href="coleta.html" class="ativo" target="_blank">Pontos de coleta</a>
+                   <a href="videos.html">Vídeos</a>
+                   <a href="sobre.html">Sobre</a>
+               </nav>
            </div>
        </div>
    </header>
+
+   <!-- CONTEÚDO ORIGINAL -->
+   <main>
+       <section>
+           <h1>Bem-vindo ao Cianorte EcoVida 🌱</h1>
+           <p>Descubra os pontos de coleta e ajude o meio ambiente com atitudes conscientes.</p>
+       </section>
+
+       <section>
+           <h2>Notícias</h2>
+           <article>
+               <h3>📢 Nova campanha de reciclagem em Cianorte</h3>
+               <p>A prefeitura anunciou novos pontos de coleta de lixo eletrônico espalhados pela cidade.</p>
+           </article>
+           <article>
+               <h3>🌍 Comunidade escolar engajada</h3>
+               <p>Alunos e professores promovem ação de conscientização sobre a importância da reciclagem.</p>
+           </article>
+       </section>
+   </main>
+
+   <!-- RODAPÉ -->
+   <footer>
+       <p>&copy; 2025 Cianorte EcoVida - Todos os direitos reservados.</p>
+   </footer>
 
    <script>
        function toggleMenu() {
