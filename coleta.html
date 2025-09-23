@@ -98,6 +98,61 @@
           padding: 100px 20px;
       }
 
+      /* Estilo para o menu hamburger */
+      .menu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .menu nav {
+          display: flex;
+      }
+
+      .menu nav a {
+          margin: 0 15px;
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+      /* Menu hamburger - escondido em telas maiores */
+      .menu-hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+      }
+
+      .menu-hamburger div {
+          width: 30px;
+          height: 4px;
+          background-color: white;
+          margin: 5px 0;
+          border-radius: 2px;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+          .menu nav {
+              display: none;
+              flex-direction: column;
+              width: 100%;
+              text-align: center;
+          }
+
+          .menu nav a {
+              margin: 10px 0;
+          }
+
+          .menu-hamburger {
+              display: flex;
+          }
+
+          .menu.show nav {
+              display: flex;
+          }
+      }
+
    </style>
 </head>
 <body>
@@ -108,13 +163,21 @@
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
            <div class="menu">
-               <nav>
-                   <a href="index.html">Início</a>
-                   <a href="oque.html" target="_blank">O que é</a>
-                   <a href="coleta.html" class="ativo" target="_blank">Pontos de coleta</a>
-                   <a href="videos.html">Vídeos</a>
-                   <a href="sobre.html">Sobre</a>
-               </nav>
+               <!-- Ícone do menu hambúrguer -->
+               <div class="menu-hamburger" onclick="toggleMenu()">
+                   <div></div>
+                   <div></div>
+                   <div></div>
+               </div>
+               <div class="menu-links">
+                   <nav>
+                       <a href="index.html">Início</a>
+                       <a href="oque.html" target="_blank">O que é</a>
+                       <a href="coleta.html" class="ativo" target="_blank">Pontos de coleta</a>
+                       <a href="videos.html">Vídeos</a>
+                       <a href="sobre.html">Sobre</a>
+                   </nav>
+               </div>
            </div>
            <div class="login">
                <button id="btnLogin" onclick="abrirLogin()">
@@ -126,14 +189,15 @@
    </header>
 
    <!-- Texto rolante -->
-<div class="rolante-container">
-  <div class="rolante">
-    <p>
-      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-      <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-    </p>
-  </div>
-</div>
+   <div class="rolante-container">
+     <div class="rolante">
+       <p>
+         Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+         <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+       </p>
+     </div>
+   </div>
+   
    <main>
        <!-- Primeiro texto acima da imagem -->
        <section class="texto-acima-imagem">
@@ -158,6 +222,17 @@
        </section>
    </main>
 
-   <script src="script.js"></script>
+   <script>
+      // Função para alternar o menu (mostrar/ocultar)
+      function toggleMenu() {
+          const menu = document.querySelector('.menu');
+          menu.classList.toggle('show');
+      }
+
+      // Função para abrir o login (exemplo)
+      function abrirLogin() {
+          alert('Abrir Login');
+      }
+   </script>
 </body>
 </html>
