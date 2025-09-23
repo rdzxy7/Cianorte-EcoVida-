@@ -27,7 +27,7 @@
         scroll-behavior: smooth;
       }
 
-      /* Estilo do botão */
+      /* Botão de link */
       .botao-link {
           display: inline-block;
           padding: 12px 25px;
@@ -98,8 +98,22 @@
           padding: 100px 20px;
       }
 
-      /* -------- MENU HAMBURGER -------- */
-      .menu {
+      /* ------- MENU HAMBURGER ------- */
+      header .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+      }
+
+      .menu-toggle {
+          display: none;
+          font-size: 28px;
+          cursor: pointer;
+          color: white;
+      }
+
+      .menu nav {
           display: flex;
           gap: 15px;
       }
@@ -111,24 +125,8 @@
           padding: 8px 12px;
       }
 
-      .hamburger {
-          display: none;
-          flex-direction: column;
-          justify-content: space-between;
-          width: 25px;
-          height: 18px;
-          cursor: pointer;
-      }
-
-      .hamburger span {
-          display: block;
-          height: 3px;
-          background: white;
-          border-radius: 2px;
-      }
-
       @media (max-width: 768px) {
-          .menu {
+          .menu nav {
               display: none;
               flex-direction: column;
               position: absolute;
@@ -139,12 +137,12 @@
               border-radius: 8px;
           }
 
-          .menu.ativo {
+          .menu nav.active {
               display: flex;
           }
 
-          .hamburger {
-              display: flex;
+          .menu-toggle {
+              display: block;
           }
       }
    </style>
@@ -156,13 +154,11 @@
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
-           <!-- Botão hambúrguer -->
-           <div class="hamburger" id="hamburger">
-               <span></span>
-               <span></span>
-               <span></span>
-           </div>
-           <div class="menu" id="menu">
+
+           <!-- Botão menu hamburguer -->
+           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+           <div class="menu">
                <nav>
                    <a href="index.html">Início</a>
                    <a href="oque.html" target="_blank">O que é</a>
@@ -171,6 +167,7 @@
                    <a href="sobre.html">Sobre</a>
                </nav>
            </div>
+
            <div class="login">
                <button id="btnLogin" onclick="abrirLogin()">
                    <img src="img/boneco login.png" alt="Login" width="24" height="24">
@@ -181,14 +178,15 @@
    </header>
 
    <!-- Texto rolante -->
-<div class="rolante-container">
-  <div class="rolante">
-    <p>
-      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-      <a href="sua-pagina.html" class="botao">Clique aqui!</a>
-    </p>
-  </div>
-</div>
+   <div class="rolante-container">
+      <div class="rolante">
+        <p>
+          Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+          <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+        </p>
+      </div>
+   </div>
+
    <main>
        <!-- Primeiro texto acima da imagem -->
        <section class="texto-acima-imagem">
@@ -213,15 +211,11 @@
        </section>
    </main>
 
-   <script>
-      // Script do menu hamburguer
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-
-      hamburger.addEventListener('click', () => {
-          menu.classList.toggle('ativo');
-      });
-   </script>
    <script src="script.js"></script>
+   <script>
+       function toggleMenu() {
+           document.querySelector(".menu nav").classList.toggle("active");
+       }
+   </script>
 </body>
 </html>
