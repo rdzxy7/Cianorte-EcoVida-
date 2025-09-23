@@ -20,7 +20,7 @@
         display: flex;
         align-items: center;
         padding: 10px 50px;
-        justify-content: flex-start;
+        justify-content: space-between;
         position: relative;
       }
 
@@ -32,11 +32,8 @@
         height: 60px;
       }
 
-      /* Menu centralizado */
+      /* Menu centralizado no desktop */
       header nav {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
         display: flex;
         gap: 20px;
       }
@@ -52,6 +49,48 @@
         text-decoration: none;
         font-weight: bold;
         color: #fff;
+      }
+
+      /* Botão do menu hambúrguer */
+      .menu-toggle {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Responsivo */
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+          flex-direction: column;
+          background: #00CE76;
+          position: absolute;
+          top: 70px; /* altura do header */
+          right: 20px;
+          width: 200px;
+          padding: 10px;
+          border-radius: 0 0 12px 12px;
+          z-index: 999;
+        }
+
+        nav a {
+          padding: 10px;
+          color: #fff;
+          border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        nav a:last-child {
+          border-bottom: none;
+        }
+
+        .menu-toggle {
+          display: block; /* aparece no celular */
+        }
+
+        nav.show {
+          display: flex; /* ativa quando o JS adiciona a classe */
+        }
       }
 
       /* Texto rolante no topo */
@@ -212,15 +251,17 @@
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
-           <div class="menu">
-               <nav>
-                   <a href="index.html">Início</a>
-                   <a href="oque.html">O que é</a>
-                   <a href="coleta.html">Pontos de coleta</a>
-                   <a href="videos.html" class="ativo">Vídeos</a>
-                   <a href="sobre.html">Sobre</a>
-               </nav>
-           </div>
+
+           <!-- Botão menu hambúrguer -->
+           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+           <nav id="menu">
+               <a href="index.html">Início</a>
+               <a href="oque.html">O que é</a>
+               <a href="coleta.html">Pontos de coleta</a>
+               <a href="videos.html" class="ativo">Vídeos</a>
+               <a href="sobre.html">Sobre</a>
+           </nav>
        </div>
    </header>
 
@@ -244,28 +285,22 @@
            <div class="grid-videos">
              <!-- Vídeo 1 -->
              <div class="video-card">
-               <iframe width="100%" height="250" 
-                 src="https://www.youtube.com/embed/YbDMdiv30ms" 
-                 title="Vídeo sobre lixo eletrônico" frameborder="0" allowfullscreen>
-               </iframe>
+               <iframe width="100%" height="250" src="https://www.youtube.com/embed/YbDMdiv30ms" 
+                 title="Vídeo sobre lixo eletrônico" frameborder="0" allowfullscreen></iframe>
                <p>Como fazer um sistema para captar água da chuva</p>
              </div>
 
              <!-- Vídeo 2 -->
              <div class="video-card">
-               <iframe width="100%" height="250" 
-                 src="https://www.youtube.com/embed/_EXEMPLO2_" 
-                 title="Reciclagem de lixo eletrônico" frameborder="0" allowfullscreen>
-               </iframe>
+               <iframe width="100%" height="250" src="https://www.youtube.com/embed/_EXEMPLO2_" 
+                 title="Reciclagem de lixo eletrônico" frameborder="0" allowfullscreen></iframe>
                <p>Como funciona a reciclagem de resíduos eletrônicos.</p>
              </div>
 
              <!-- Vídeo 3 -->
              <div class="video-card">
-               <iframe width="100%" height="250" 
-                 src="https://www.youtube.com/embed/_EXEMPLO3_" 
-                 title="Consumo consciente" frameborder="0" allowfullscreen>
-               </iframe>
+               <iframe width="100%" height="250" src="https://www.youtube.com/embed/_EXEMPLO3_" 
+                 title="Consumo consciente" frameborder="0" allowfullscreen></iframe>
                <p>Dicas para reduzir o descarte de eletrônicos.</p>
              </div>
            </div>
@@ -292,7 +327,7 @@
        </section>
    </main>
 
-   <!-- Rodapé verde rolante mais rápido com texto duplicado -->
+   <!-- Rodapé -->
    <footer>
      <div class="footer-rolante-container">
        <div class="footer-rolante">
@@ -300,5 +335,12 @@
        </div>
      </div>
    </footer>
+
+   <!-- Script do menu -->
+   <script>
+     function toggleMenu() {
+       document.getElementById("menu").classList.toggle("show");
+     }
+   </script>
 </body>
 </html>
