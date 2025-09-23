@@ -4,7 +4,6 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Pontos de Coleta - Cianorte EcoVida</title>
-   <link rel="stylesheet" href="style.css">
    <style>
       /* Gradient animado para toda a página */
       body {
@@ -101,8 +100,9 @@
       /* Estilo para o menu hamburger */
       .menu {
           display: flex;
-          justify-content: space-between;
+          justify-content: center;  /* Centraliza o menu */
           align-items: center;
+          width: 100%;  /* Abarca toda a largura da tela */
       }
 
       .menu nav {
@@ -153,6 +153,22 @@
           }
       }
 
+      /* Texto rolante */
+      .rolante-container {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          padding: 10px 0;
+          text-align: center;
+      }
+
+      .rolante-container a {
+          color: #FFD700;
+          text-decoration: none;
+          font-weight: bold;
+      }
    </style>
 </head>
 <body>
@@ -178,12 +194,6 @@
                        <a href="sobre.html">Sobre</a>
                    </nav>
                </div>
-           </div>
-           <div class="login">
-               <button id="btnLogin" onclick="abrirLogin()">
-                   <img src="img/boneco login.png" alt="Login" width="24" height="24">
-                   <span id="loginText">Login</span>
-               </button>
            </div>
        </div>
    </header>
@@ -227,11 +237,6 @@
       function toggleMenu() {
           const menu = document.querySelector('.menu');
           menu.classList.toggle('show');
-      }
-
-      // Função para abrir o login (exemplo)
-      function abrirLogin() {
-          alert('Abrir Login');
       }
    </script>
 </body>
