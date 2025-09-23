@@ -6,6 +6,7 @@
    <title>Pontos de Coleta - Cianorte EcoVida</title>
    <link rel="stylesheet" href="style.css">
    <style>
+      /* Gradient animado para toda a página */
       body {
           margin: 0;
           padding: 0;
@@ -26,88 +27,86 @@
         scroll-behavior: smooth;
       }
 
-      /* CABEÇALHO */
-      header {
-          background: transparent;
-          padding: 10px 20px;
-      }
-
-      header .container {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          position: relative;
-      }
-
-      /* Logo sempre à esquerda */
-      .logo img {
-          height: 50px;
-      }
-
-      /* Menu centralizado */
-      .menu {
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-      }
-
-      .menu nav {
-          display: flex;
-          gap: 15px;
-      }
-
-      .menu nav a {
+      /* Estilo do botão */
+      .botao-link {
+          display: inline-block;
+          padding: 12px 25px;
+          background-color: #4CAF50;
           color: white;
           text-decoration: none;
           font-weight: bold;
-          padding: 8px 12px;
+          border-radius: 8px;
+          transition: background-color 0.3s ease;
+          margin-top: 20px;
       }
 
-      /* Botão menu hamburguer */
-      .menu-toggle {
-          display: none;
-          font-size: 28px;
-          cursor: pointer;
+      .botao-link:hover {
+          background-color: #45a049;
+      }
+
+      /* Centralizando seção da imagem e botão */
+      .imagem-botao-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 40px 0;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .imagem-botao-section img {
+          width: 100%;
+          max-width: 800px;
+          height: auto;
+          border-radius: 10px;
+      }
+
+      /* Texto acima da imagem */
+      .texto-acima-imagem {
+          max-width: 900px;
+          margin: 30px auto 20px auto;
+          padding: 0 20px;
+          text-align: center;
+          font-size: 20px;
+          line-height: 1.8;
+          color: white;
+          font-weight: bold;
+      }
+
+      /* Texto abaixo da imagem */
+      .texto-abaixo-imagem {
+          max-width: 900px;
+          margin: 40px auto;
+          padding: 0 20px;
+          text-align: center;
+          font-size: 18px;
+          line-height: 1.8;
           color: white;
       }
 
-      @media (max-width: 768px) {
-          .menu nav {
-              display: none;
-              flex-direction: column;
-              position: absolute;
-              top: 60px;
-              right: 20px;
-              background: rgba(0,0,0,0.9);
-              padding: 15px;
-              border-radius: 8px;
-          }
-
-          .menu nav.active {
-              display: flex;
-          }
-
-          .menu-toggle {
-              display: block;
-              position: absolute;
-              right: 20px;
-          }
+      .texto-abaixo-imagem p {
+          margin-bottom: 18px;
       }
+
+      /* Hero section centralizada */
+      .hero-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 100px 20px;
+      }
+
    </style>
 </head>
 <body>
    <!-- CABEÇALHO -->
    <header>
        <div class="container">
-           <!-- Logo à esquerda -->
            <div class="logo">
                <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
            </div>
-
-           <!-- Botão menu hamburguer -->
-           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-           <!-- Menu centralizado -->
            <div class="menu">
                <nav>
                    <a href="index.html">Início</a>
@@ -117,38 +116,48 @@
                    <a href="sobre.html">Sobre</a>
                </nav>
            </div>
+           <div class="login">
+               <button id="btnLogin" onclick="abrirLogin()">
+                   <img src="img/boneco login.png" alt="Login" width="24" height="24">
+                   <span id="loginText">Login</span>
+               </button>
+           </div>
        </div>
    </header>
 
-   <!-- CONTEÚDO ORIGINAL -->
+   <!-- Texto rolante -->
+<div class="rolante-container">
+  <div class="rolante">
+    <p>
+      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+      <a href="sua-pagina.html" class="botao">Clique aqui!</a>
+    </p>
+  </div>
+</div>
    <main>
-       <section>
-           <h1>Bem-vindo ao Cianorte EcoVida 🌱</h1>
-           <p>Descubra os pontos de coleta e ajude o meio ambiente com atitudes conscientes.</p>
+       <!-- Primeiro texto acima da imagem -->
+       <section class="texto-acima-imagem">
+           🌍 Bem-vindo ao Cianorte EcoVida<br><br>
+           Nosso objetivo é tornar Cianorte uma cidade mais limpa, sustentável e consciente.<br><br>
+           Aqui você encontra informações sobre pontos de coleta de resíduos e dicas para fazer o descarte correto do lixo doméstico, contribuindo para o bem-estar da comunidade e para a preservação do meio ambiente.<br><br>
+           ➡️ Confira os pontos de coleta disponíveis em Cianorte e faça parte dessa mudança
        </section>
 
-       <section>
-           <h2>Notícias</h2>
-           <article>
-               <h3>📢 Nova campanha de reciclagem em Cianorte</h3>
-               <p>A prefeitura anunciou novos pontos de coleta de lixo eletrônico espalhados pela cidade.</p>
-           </article>
-           <article>
-               <h3>🌍 Comunidade escolar engajada</h3>
-               <p>Alunos e professores promovem ação de conscientização sobre a importância da reciclagem.</p>
-           </article>
+       <!-- Imagem com botão -->
+       <section class="imagem-botao-section">
+           <img src="img/banner-site_(340).jpg" alt="Imagem Descritiva">
+           <a href="https://cianorte.my.canva.site/coleta-de-lixo" target="_blank" class="botao-link">Saiba Mais</a>
+       </section>
+
+       <!-- Segundo texto abaixo da imagem -->
+       <section class="texto-abaixo-imagem">
+           <p>Separar o lixo e destiná-lo de forma correta é uma atitude simples que faz toda a diferença.</p>
+           <p>Juntos, podemos construir uma cidade mais organizada, saudável e comprometida com as futuras gerações.</p>
+           <!-- Novo botão abaixo do texto -->
+           <a href="https://rdzxy7.github.io/Cianorte-EcoVida-/oque.html" target="_blank" class="botao-link">Saiba Mais</a>
        </section>
    </main>
 
-   <!-- RODAPÉ -->
-   <footer>
-       <p>&copy; 2025 Cianorte EcoVida - Todos os direitos reservados.</p>
-   </footer>
-
-   <script>
-       function toggleMenu() {
-           document.querySelector(".menu nav").classList.toggle("active");
-       }
-   </script>
+   <script src="script.js"></script>
 </body>
 </html>
