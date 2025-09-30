@@ -35,8 +35,8 @@
 
       .logo {
           position: absolute;
-          top: 10px;
-          left: 40px;
+          top: 10px;   /* SUBI a logo */
+          left: 40px;  /* Mantém na esquerda */
       }
 
       .logo img {
@@ -75,57 +75,24 @@
           transform-origin: bottom left;
       }
 
-      /* Menu Hambúrguer */
+      /* Botão menu hamburguer */
       .menu-toggle {
           display: none;
-          flex-direction: column;
-          cursor: pointer;
           position: absolute;
           top: 20px;
           right: 20px;
-      }
-
-      .menu-toggle div {
+          flex-direction: column;
+          justify-content: space-between;
           width: 30px;
-          height: 3px;
-          background: white;
-          margin: 5px 0;
-          border-radius: 2px;
+          height: 22px;
+          cursor: pointer;
       }
 
-      /* Mobile */
-      @media (max-width: 768px) {
-          header {
-              padding: 40px 0; /* aumenta o cabeçalho no mobile */
-          }
-
-          .logo img {
-              height: 90px; /* aumenta a logo */
-          }
-
-          nav {
-              display: none;
-              flex-direction: column;
-              background: #00CE76;
-              position: absolute;
-              top: 100%;
-              left: 0;
-              width: 100%;
-              padding: 15px 0;
-          }
-
-          nav.show {
-              display: flex;
-          }
-
-          nav a {
-              padding: 10px 0;
-              font-size: 20px;
-          }
-
-          .menu-toggle {
-              display: flex;
-          }
+      .menu-toggle span {
+          display: block;
+          height: 4px;
+          background: white;
+          border-radius: 2px;
       }
 
       /* Texto rolante */
@@ -149,6 +116,7 @@
           font-weight: bold;
       }
 
+      /* Botão dentro do rolante */
       .rolante a.botao-link {
           display: inline-block;
           padding: 8px 20px;
@@ -184,6 +152,7 @@
           margin-bottom: 25px;
       }
 
+      /* Fotos com legenda */
       .foto-legenda {
           text-align: center;
           margin: 15px;
@@ -202,6 +171,7 @@
           color: white;
       }
 
+      /* Seção Diretora com fotos lado a lado */
       .diretora-container {
           display: flex;
           justify-content: center;
@@ -209,6 +179,7 @@
           flex-wrap: nowrap; 
       }
 
+      /* Google Maps */
       .mapa iframe {
           width: 100%;
           height: 450px;
@@ -218,6 +189,7 @@
           margin-top: 20px;
       }
 
+      /* Botões gerais */
       .botao-link {
           display: inline-block;
           padding: 12px 25px;
@@ -234,6 +206,7 @@
           background-color: #45a049;
       }
 
+      /* Rodapé rolante */
       footer {
           position: relative;
           background-color: #00CE76;
@@ -259,6 +232,38 @@
           from { transform: translateX(0); }
           to { transform: translateX(-100%); }
       }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+          header {
+              padding: 60px 0; /* cabeçalho mais alto no mobile */
+          }
+
+          .logo img {
+              height: 110px; /* logo maior no mobile */
+          }
+
+          nav {
+              display: none;
+              flex-direction: column;
+              background: #00CE76;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              padding: 15px 0;
+          }
+
+          nav.active {
+              display: flex;
+          }
+
+          .menu-toggle {
+              display: flex;
+              top: 35px; /* ajusta alinhamento no cabeçalho maior */
+              right: 25px;
+          }
+      }
    </style>
 </head>
 <body>
@@ -268,14 +273,14 @@
            <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
        </div>
 
-       <!-- Botão menu hambúrguer -->
-       <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
-           <div></div>
-           <div></div>
-           <div></div>
+       <!-- Botão hambúrguer -->
+       <div class="menu-toggle" onclick="toggleMenu()">
+           <span></span>
+           <span></span>
+           <span></span>
        </div>
 
-       <nav>
+       <nav id="menu">
            <a href="index.html">Início</a>
            <a href="oque.html" target="_blank">O que é</a>
            <a href="coleta.html" target="_blank">Pontos de coleta</a>
@@ -295,6 +300,7 @@
    </div>
 
    <main>
+       <!-- Seção: Sobre a Escola -->
        <section class="section">
            <h2>Sobre a Escola</h2>
            <div class="foto-legenda">
@@ -303,6 +309,7 @@
            </div>
        </section>
 
+       <!-- Seção: Diretora -->
        <section class="section">
            <h2>Equipe pedagógica</h2>
            <div class="diretora-container">
@@ -315,6 +322,7 @@
            </div>
        </section>
 
+       <!-- Seção: Professor -->
        <section class="section">
            <h2>Professor Responsável</h2>
            <div class="foto-legenda">
@@ -322,6 +330,7 @@
            </div>
        </section>
 
+       <!-- Seção: Turma -->
        <section class="section">
            <h2>Nossa Turma</h2>
            <div class="foto-legenda">
@@ -330,6 +339,7 @@
            </div>
        </section>
 
+       <!-- Seção: Localização -->
        <section class="section mapa">
            <h2>Onde Estamos</h2>
            <iframe
@@ -339,6 +349,7 @@
        </section>
    </main>
 
+   <!-- Rodapé rolante -->
    <footer>
      <div class="footer-rolante-container">
        <div class="footer-rolante">
@@ -347,5 +358,11 @@
        </div>
      </div>
    </footer>
+
+   <script>
+      function toggleMenu() {
+          document.getElementById("menu").classList.toggle("active");
+      }
+   </script>
 </body>
 </html>
