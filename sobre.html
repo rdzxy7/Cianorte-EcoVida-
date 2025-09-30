@@ -75,6 +75,54 @@
           transform-origin: bottom left;
       }
 
+      /* Botão hamburguer */
+      .menu-toggle {
+          display: none;
+          position: absolute;
+          top: 25px;
+          right: 25px;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 30px;
+          height: 22px;
+          cursor: pointer;
+      }
+
+      .menu-toggle span {
+          display: block;
+          height: 4px;
+          background: white;
+          border-radius: 3px;
+          transition: 0.3s;
+      }
+
+      /* Menu responsivo */
+      @media (max-width: 768px) {
+          nav {
+              display: none;
+              flex-direction: column;
+              background: #00CE76;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              padding: 15px 0;
+          }
+
+          nav a {
+              display: block;
+              padding: 10px 0;
+          }
+
+          nav.active {
+              display: flex;
+          }
+
+          .menu-toggle {
+              display: flex;
+          }
+      }
+
       /* Texto rolante */
       .rolante-container {
           overflow: hidden;
@@ -220,7 +268,15 @@
        <div class="logo">
            <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
        </div>
-       <nav>
+
+       <!-- Botão hamburguer -->
+       <div class="menu-toggle" onclick="toggleMenu()">
+           <span></span>
+           <span></span>
+           <span></span>
+       </div>
+
+       <nav id="menu">
            <a href="index.html">Início</a>
            <a href="oque.html" target="_blank">O que é</a>
            <a href="coleta.html" target="_blank">Pontos de coleta</a>
@@ -298,5 +354,11 @@
        </div>
      </div>
    </footer>
+
+   <script>
+       function toggleMenu() {
+           document.getElementById("menu").classList.toggle("active");
+       }
+   </script>
 </body>
 </html>
