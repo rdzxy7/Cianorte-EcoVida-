@@ -28,7 +28,7 @@
 
       /* Cabeçalho */
       header {
-          background-color: #00CE76; /* Cor alterada para #00CE76 */
+          background-color: #00CE76; 
           padding: 25px 0;
           text-align: center;
           position: relative;
@@ -99,7 +99,7 @@
           display: inline-block;
           padding: 8px 20px;
           margin: 0 15px;
-          background-color: #28a745; /* verde */
+          background-color: #28a745; 
           color: white;
           text-decoration: none;
           font-weight: bold;
@@ -152,9 +152,9 @@
       /* Seção Diretora com fotos lado a lado */
       .diretora-container {
           display: flex;
-          justify-content: center; /* centraliza as fotos */
-          gap: 40px; /* espaço entre as fotos */
-          flex-wrap: nowrap; /* garante que as fotos não fiquem uma embaixo da outra */
+          justify-content: center;
+          gap: 40px; 
+          flex-wrap: nowrap; 
       }
 
       /* Google Maps */
@@ -201,7 +201,7 @@
       .footer-rolante {
           display: inline-block;
           padding-left: 100%;
-          animation: rolar-footer 15s linear infinite; /* mais rápido */
+          animation: rolar-footer 15s linear infinite;
           color: white;
           font-weight: bold;
       }
@@ -209,30 +209,6 @@
       @keyframes rolar-footer {
           from { transform: translateX(0); }
           to { transform: translateX(-100%); }
-      }
-
-      /* Estilos para o Modo Escuro */
-      body.dark-mode {
-          background: #121212;
-          color: white;
-      }
-
-      button#theme-toggle {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          background-color: #333;
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          font-size: 16px;
-          border-radius: 5px;
-          cursor: pointer;
-          z-index: 1000;
-      }
-
-      button#theme-toggle:hover {
-          background-color: #555;
       }
    </style>
 </head>
@@ -255,7 +231,7 @@
    <div class="rolante-container">
        <div class="rolante">
            <p>
-               🌱 Reduza o lixo eletrônico! Proteja o meio ambiente! Doe seus aparelhos!  
+               Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso! 
                <a href="https://drive.google.com/file/d/1ELQ6UjOP_UxvtoNheM1Kj-0Cp888t7k2/view?usp=drive_link" class="botao-link">Clique aqui!</a>
            </p>
        </div>
@@ -276,11 +252,9 @@
            <h2>Equipe pedagógica</h2>
            <div class="diretora-container">
                <div class="foto-legenda">
-                   <img src="img/diretora1.jpg" alt="Foto da Diretora">
                    <p>A diretora lidera com dedicação projetos que incentivam alunos e comunidade a cuidar do meio ambiente.</p>
                </div>
                <div class="foto-legenda">
-                   <img src="img/diretora2.jpg" alt="Pedagoga">
                    <p>A pedagoga também participa de eventos e iniciativas de sustentabilidade na escola, fornecendo todo o apoio pedagógico necessário </p>
                </div>
            </div>
@@ -290,7 +264,6 @@
        <section class="section">
            <h2>Professor Responsável</h2>
            <div class="foto-legenda">
-               <img src="img/professor.jpg" alt="Foto do Professor">
                <p>O professor Arthur Barradas Silveira orienta os alunos em projetos de reciclagem e conscientização ambiental, incentivando práticas sustentáveis e o engajamento da comunidade escolar na preservação do meio ambiente.</p>
            </div>
        </section>
@@ -323,22 +296,5 @@
        </div>
      </div>
    </footer>
-
-   <!-- Botão para alternar o tema -->
-   <button id="theme-toggle">Modo Escuro</button>
-
-   <script>
-      const toggleButton = document.getElementById('theme-toggle');
-      const body = document.body;
-
-      toggleButton.addEventListener('click', () => {
-          body.classList.toggle('dark-mode');
-          if (body.classList.contains('dark-mode')) {
-              toggleButton.textContent = 'Modo Claro';
-          } else {
-              toggleButton.textContent = 'Modo Escuro';
-          }
-      });
-   </script>
 </body>
 </html>
