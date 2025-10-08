@@ -15,7 +15,7 @@ html {
 /* HEADER */
 /* ========================= */
 header {
-    background-color: #00CE76;
+    background-color: #348312;
     padding: 20px 40px;
     width: 100%;
     box-sizing: border-box;
@@ -86,7 +86,7 @@ header {
 .rolante-container {
     width: 100%;
     overflow: hidden;
-    background: #00b362;
+    background: #4de800;
     padding: 10px 0;
     box-sizing: border-box;
 }

@@ -6,7 +6,6 @@
    <title>Vídeos - Cianorte EcoVida</title>
    <link rel="stylesheet" href="style.css">
    <style>
-      /* BODY COM FUNDO LINEAR */
       body {
          margin: 0;
          padding: 0;
@@ -15,7 +14,7 @@
          min-height: 100vh;
       }
 
-      /* CABEÇALHO */
+
       header .container {
          display: flex;
          align-items: center;
@@ -32,7 +31,6 @@
          height: 60px;
       }
 
-      /* Menu centralizado */
       header nav {
          position: absolute;
          left: 50%;
@@ -47,16 +45,14 @@
          font-weight: bold;
       }
 
-      /* Link ativo “Vídeos” com letra branca */
       header nav a.ativo {
          text-decoration: none;
          font-weight: bold;
          color: #fff;
       }
 
-      /* Texto rolante no topo */
       .rolante-container {
-         background: linear-gradient(90deg, #00CE76, #009955);
+         background: #4de800;
          color: white;
          overflow: hidden;
          white-space: nowrap;
@@ -97,7 +93,7 @@
          100% { transform: translateX(-100%); }
       }
 
-      /* Seção de vídeos */
+
       main {
          padding: 40px 20px;
       }
@@ -133,10 +129,9 @@
          color: #333;
       }
 
-      /* Seção do documentário */
       #documentario {
          padding: 40px 20px;
-         background: none; /* sem fundo */
+         background: none;
          margin-top: 40px;
          text-align: center;
       }
@@ -159,7 +154,6 @@
          border-radius: 12px;
       }
 
-      /* Botão do documentário */
       .botao-documentario {
          display: inline-block;
          background: #00CE76;
@@ -177,9 +171,8 @@
          transform: scale(1.05);
       }
 
-      /* Rodapé verde rolante mais rápido com texto duplicado */
       footer {
-         background: #00CE76; /* verde */
+         background: #00CE76;
          padding: 15px 0;
          position: relative;
          overflow: hidden;
@@ -196,7 +189,7 @@
          font-weight: bold;
          font-size: 16px;
          padding-left: 100%;
-         animation: rolar-footer 15s linear infinite; /* velocidade aumentada */
+         animation: rolar-footer 15s linear infinite;
       }
 
       @keyframes rolar-footer {
@@ -204,7 +197,6 @@
          100% { transform: translateX(-100%); }
       }
 
-      /* Botão do menu hambúrguer */
       .menu-toggle {
          display: none;
          font-size: 28px;
@@ -212,14 +204,13 @@
          color: #fff;
       }
 
-      /* Responsivo: só ativa no celular */
       @media (max-width: 768px) {
          nav {
             display: none;
             flex-direction: column;
             background: #00CE76;
             position: absolute;
-            top: 70px; /* altura do header */
+            top: 70px;
             right: 20px;
             width: 200px;
             padding: 10px;
@@ -238,11 +229,11 @@
          }
 
          .menu-toggle {
-            display: block; /* aparece só no celular */
+            display: block;
          }
 
          nav.show {
-            display: flex; /* aparece quando abre */
+            display: flex;
          }
       }
 
@@ -267,7 +258,6 @@
 </head>
 <body>
 
-   <!-- CABEÇALHO -->
    <header>
        <div class="container">
            <div class="logo">
@@ -288,7 +278,6 @@
        </div>
    </header>
 
-   <!-- Texto rolante -->
    <div class="rolante-container">
      <div class="rolante">
        <p>
@@ -298,7 +287,6 @@
      </div>
    </div>
 
-   <!-- Conteúdo da página Vídeos -->
    <main>
        <section id="videos">
          <div class="section-container">
@@ -306,7 +294,6 @@
            <p>Acompanhe alguns vídeos educativos sobre o impacto e a reciclagem de resíduos eletrônicos.</p>
 
            <div class="grid-videos">
-              <!-- Vídeo 1 -->
               <div class="video-card">
                  <iframe width="100%" height="250" 
                    src="https://www.youtube.com/embed/YbDMdiv30ms" 
@@ -316,7 +303,6 @@
                  <a href="https://www.sempresustentavel.com.br/" class="botao-video">Saiba mais</a>
               </div>
 
-              <!-- Vídeo 2 -->
               <div class="video-card">
                  <iframe width="100%" height="250" 
                    src="https://www.youtube.com/embed/zGA6YDzGCWo" 
@@ -326,7 +312,6 @@
                  <a href="https://www.sempresustentavel.com.br/" class="botao-video">Saiba mais</a>
               </div>
 
-              <!-- Vídeo 3 -->
               <div class="video-card">
                  <iframe width="100%" height="250" 
                    src="https://www.youtube.com/embed/jFRCbPcwGWA" 
@@ -339,7 +324,6 @@
          </div>
        </section>
 
-       <!-- Seção do documentário -->
        <section id="documentario">
          <div class="section-container">
            <h2>Documentário sobre Lixo Eletrônico</h2>
@@ -350,16 +334,12 @@
                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
            </iframe>
 
-           <!-- Texto explicativo -->
            <p>Após assistir ao documentário, fica claro que o lixo eletrônico precisa ser descartado corretamente. Procure sempre levar seus aparelhos antigos a pontos de coleta ou empresas de reciclagem autorizadas. Cada ação conta para proteger o meio ambiente!</p>
-
-           <!-- Botão de ação -->
            <a href="coleta.html" class="botao-documentario">📍 Ir para Pontos de Coleta</a>
          </div>
        </section>
    </main>
 
-   <!-- Rodapé -->
    <footer>
      <div class="footer-rolante-container">
         <div class="footer-rolante">

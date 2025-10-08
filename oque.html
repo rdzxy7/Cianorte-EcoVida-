@@ -17,9 +17,8 @@
 
        html { scroll-behavior: smooth; }
 
-       /* CABEÇALHO */
        header {
-           background-color: #00CE76;
+           background-color: #348312;
            width: 100%;
            box-sizing: border-box;
            position: relative;
@@ -37,7 +36,6 @@
            width: 100%;
        }
 
-       /* Logo fixa na esquerda */
        header .logo {
            position: absolute;
            left: 20px;
@@ -50,7 +48,6 @@
            height: auto;
        }
 
-       /* Menu centralizado */
        header .menu {
            position: relative;
        }
@@ -73,7 +70,6 @@
            position: relative;
        }
 
-       /* Linha gradiente que aparece apenas no hover */
        header nav a::after {
            content: "";
            position: absolute;
@@ -100,7 +96,6 @@
            text-decoration: none;
        }
 
-       /* Hamburger */
        .hamburger {
            display: none;
            flex-direction: column;
@@ -119,11 +114,10 @@
            background-color: white;
        }
 
-       /* Menu mobile */
        .menu-mobile {
            display: none;
            flex-direction: column;
-           background-color: #00CE76;
+           background-color: #348312;
            position: absolute;
            top: 100%;
            right: 0;
@@ -143,13 +137,12 @@
 
        .menu-mobile a:last-child { border-bottom: none; }
 
-       /* Texto rolante */
        .rolante-container {
            width: 100%;
            overflow: hidden;
            white-space: nowrap;
            padding: 5px 0;
-           background-color: #00A86B;
+           background-color: #4de800;
        }
 
        .rolante p {
@@ -181,7 +174,6 @@
            background-color: #00CE76;
        }
 
-       /* Seções */
        section {
            padding: 50px 20px;
            text-align: center;
@@ -201,7 +193,6 @@
            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
        }
 
-       /* Cards */
        .cards {
            display: grid;
            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -251,7 +242,6 @@
            font-size: 0.95rem;
        }
 
-       /* Rodapé animado */
        footer {
            background-color: #00A86B;
            overflow: hidden;
@@ -277,7 +267,6 @@
            100% { transform: translateX(-100%); }
        }
 
-       /* Responsividade */
        @media (max-width: 768px) {
            header nav {
                display: none;
@@ -293,7 +282,6 @@
            }
        }
 
-       /* NOVA ANIMAÇÃO PARA O FUNDO */
        @keyframes animarFundo {
            0% { background-position: 0% 50%; }
            50% { background-position: 100% 50%; }
@@ -302,7 +290,6 @@
    </style>
 </head>
 <body>
-   <!-- CABEÇALHO -->
    <header>
        <div class="container">
            <div class="logo">
@@ -317,14 +304,12 @@
                <a href="sobre.html">Sobre</a>
            </nav>
 
-           <!-- Hamburger -->
            <div class="hamburger" onclick="toggleMenu()">
                <div></div>
                <div></div>
                <div></div>
            </div>
 
-           <!-- Menu Mobile -->
            <div class="menu-mobile" id="menuMobile">
                <a href="index.html">Início</a>
                <a href="oque.html" class="ativo">O que é</a>
@@ -335,7 +320,6 @@
        </div>
    </header>
 
-   <!-- Texto rolante -->
    <div class="rolante-container">
        <div class="rolante">
            <p>
@@ -345,7 +329,6 @@
        </div>
    </div>
 
-   <!-- Conteúdo -->
    <main>
        <section id="oque">
            <h2>O que é Lixo Eletrônico?</h2>
@@ -419,7 +402,6 @@
     </section>
    </main>
 
-   <!-- Rodapé animado -->
    <footer>
        <div class="footer-rolante-container">
            <div class="footer-rolante">
