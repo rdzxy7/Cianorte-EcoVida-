@@ -80,9 +80,6 @@ header {
   margin-left: auto;
 }
 
-/* ========================= */
-/* TEXTO ROLANTE */
-/* ========================= */
 .rolante-container {
     width: 100%;
     overflow: hidden;
@@ -110,9 +107,6 @@ header {
     100% { transform: translateX(-100%); }
 }
 
-/* ========================= */
-/* HERO SECTION */
-/* ========================= */
 .hero-section {
     display: flex;
     justify-content: center;
