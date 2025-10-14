@@ -6,6 +6,7 @@
    <title>Pontos de Coleta - Cianorte EcoVida</title>
    <link rel="stylesheet" href="style.css">
    <style>
+      /* Gradient animado para toda a página */
       body {
           margin: 0;
           padding: 0;
@@ -17,15 +18,14 @@
       }
 
       @keyframes gradientAnim {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
+      /* Estilo do botão principal */
       .botao-link {
           display: inline-block;
           padding: 12px 25px;
@@ -38,11 +38,9 @@
           margin-top: 20px;
       }
 
-      .botao-link:hover {
-          background-color: #45a049;
-      }
+      .botao-link:hover { background-color: #45a049; }
 
-
+      /* Centralizando seção da imagem e botão */
       .imagem-botao-section {
           display: flex;
           flex-direction: column;
@@ -60,6 +58,7 @@
           border-radius: 10px;
       }
 
+      /* Texto acima da imagem */
       .texto-acima-imagem {
           max-width: 900px;
           margin: 30px auto 20px auto;
@@ -71,6 +70,7 @@
           font-weight: bold;
       }
 
+      /* Texto abaixo da imagem */
       .texto-abaixo-imagem {
           max-width: 900px;
           margin: 40px auto;
@@ -81,50 +81,153 @@
           color: white;
       }
 
-      .texto-abaixo-imagem p {
-          margin-bottom: 18px;
-      }
+      .texto-abaixo-imagem p { margin-bottom: 18px; }
 
-      .hero-section {
+      /* ===== MENU HAMBURGER ===== */
+      header {
+          position: relative;
+          padding: 15px 30px;
           display: flex;
-          justify-content: center;
           align-items: center;
-          text-align: center;
-          padding: 100px 20px;
+          justify-content: space-between;
       }
 
+      /* Logo à esquerda */
+      .logo img { width: 120px; }
+
+      /* Menu desktop */
+      .menu nav {
+          display: flex;
+          gap: 25px;
+      }
+
+      .menu nav a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+      /* Botão hamburguer */
+      .menu-hamburguer {
+          display: none;
+          font-size: 26px;
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          z-index: 1000;
+      }
+
+      /* Menu mobile */
+      .menu-mobile {
+          display: none;
+          flex-direction: column;
+          background-color: #00CE76;
+          position: absolute;
+          top: 100%;
+          right: 10px;
+          width: 180px;
+          border-radius: 8px;
+          padding: 10px;
+          z-index: 999;
+      }
+
+      .menu-mobile a {
+          padding: 10px 0;
+          border-bottom: 1px solid #008f57;
+          color: white;
+          font-weight: bold;
+          text-decoration: none;
+      }
+
+      .menu-mobile a:last-child { border-bottom: none; }
+
+      @media (max-width: 768px) {
+          .menu nav { display: none; }
+          .menu-hamburguer { display: block; }
+      }
+
+      /* Texto rolante e botão */
+      .rolante-container {
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          padding: 5px 0;
+          background-color: #00b362;
+      }
+
+      .rolante p {
+          display: inline-block;
+          padding-left: 100%;
+          color: white;
+          font-weight: bold;
+          font-size: 14px;
+          animation: rolar 20s linear infinite;
+      }
+
+      @keyframes rolar {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+      }
+
+      .rolante a.botao {
+          display: inline-block;
+          background-color: #008000; /* COR VERDE */
+          color: white;
+          padding: 5px 10px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          margin-left: 10px;
+          transition: background-color 0.3s ease;
+      }
+
+      .rolante a.botao:hover {
+          background-color: #00CE76; /* hover do botão */
+      }
    </style>
 </head>
 <body>
-
+   <!-- CABEÇALHO -->
    <header>
-       <div class="container">
-           <div class="logo">
-               <img src="img/logo (2).png" alt="Logo Cianorte EcoVida">
-           </div>
-           <div class="menu">
-               <nav>
-                   <a href="index.html">Início</a>
-                   <a href="oque.html" target="_blank">O que é</a>
-                   <a href="coleta.html" class="ativo" target="_blank">Pontos de coleta</a>
-                   <a href="videos.html">Vídeos</a>
-                   <a href="sobre.html">Sobre</a>
-               </nav>
-           </div>
+       <div class="logo">
+           <img src="img/logo (2).png" alt="Logo Cianorte EcoVida" width="120px">
+       </div>
+
+       <div class="menu">
+           <nav>
+               <a href="index.html">Início</a>
+               <a href="oque.html" target="_blank">O que é</a>
+               <a href="coleta.html" class="ativo" target="_blank">Pontos de coleta</a>
+               <a href="video.html">Vídeos</a>
+               <a href="sobre.html">Sobre</a>
+           </nav>
+       </div>
+
+       <button class="menu-hamburguer" aria-label="Menu" onclick="toggleMenu()">☰</button>
+
+       <!-- Menu mobile -->
+       <div class="menu-mobile" id="menuMobile">
+           <a href="index.html">Início</a>
+           <a href="oque.html">O que é</a>
+           <a href="coleta.html" class="ativo">Pontos de coleta</a>
+           <a href="video.html">Vídeos</a>
+           <a href="sobre.html">Sobre</a>
        </div>
    </header>
 
+   <!-- Texto rolante -->
+   <div class="rolante-container">
+     <div class="rolante">
+       <p>
+         Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
+         <a href="https://drive.google.com/file/d/1ELQ6UjOP_UxvtoNheM1Kj-0Cp888t7k2/view" class="botao">Clique aqui!</a>
+       </p>
+     </div>
+   </div>
 
-<div class="rolante-container">
-  <div class="rolante">
-    <p>
-      Você sabia? Reduzindo o lixo e ajudando o meio ambiente você pode também ajudar o seu bolso!  
-      <a href="https://drive.google.com/file/d/1ELQ6UjOP_UxvtoNheM1Kj-0Cp888t7k2/view?usp=drive_link" class="botao">Clique aqui!</a>
-    </p>
-  </div>
-</div>
    <main>
-   
+       <!-- Primeiro texto acima da imagem -->
        <section class="texto-acima-imagem">
            🌍 Bem-vindo ao Cianorte EcoVida<br><br>
            Nosso objetivo é tornar Cianorte uma cidade mais limpa, sustentável e consciente.<br><br>
@@ -132,11 +235,13 @@
            ➡️ Confira os pontos de coleta disponíveis em Cianorte e faça parte dessa mudança
        </section>
 
+       <!-- Imagem com botão -->
        <section class="imagem-botao-section">
            <img src="img/banner-site_(340).jpg" alt="Imagem Descritiva">
            <a href="https://cianorte.my.canva.site/coleta-de-lixo" target="_blank" class="botao-link">Saiba Mais</a>
        </section>
 
+       <!-- Segundo texto abaixo da imagem -->
        <section class="texto-abaixo-imagem">
            <p>Separar o lixo e destiná-lo de forma correta é uma atitude simples que faz toda a diferença.</p>
            <p>Juntos, podemos construir uma cidade mais organizada, saudável e comprometida com as futuras gerações.</p>
@@ -144,6 +249,11 @@
        </section>
    </main>
 
-   <script src="script.js"></script>
+   <script>
+       function toggleMenu() {
+           const menu = document.getElementById('menuMobile');
+           menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+       }
+   </script>
 </body>
 </html>
